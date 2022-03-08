@@ -14,7 +14,7 @@
     
   <form @submit="register">
    
-    <h1 class="h3  fw-normal text-center">Account Details</h1>
+    <h1 class="h3 m-0 p-0  fw-normal text-center">Account Details</h1>
       <div class="d-flex justify-content-center m-0 p-0">
         <i v-if="form2Visible" @click="btn2" class="mdi mdi-menu-up text-primary  text-center m-0 p-0" style="font-size:40px"></i> 
       </div>
@@ -68,16 +68,16 @@
        </div>
     
  
-    <div class="text-muted mb-1 mt-1 text-left">
+    <div class="text-muted mb-1 mt-1 text-center" style="font-size:12px">
       <p class="text-muted p-0 mb-2 mt-3 ">Registration Type (required)</p>
      
-      <input type="checkbox" id="talent" value="Talent" v-model="checkedUserType">
+      <input class="mr-1" type="checkbox" id="talent" value="Talent" v-model="checkedUserType">
       <label class="mr-1" for="talent">Talent</label>
-      <input type="checkbox" id="vendor" value="Vendor" v-model="checkedUserType">
+      <input class="mr-1" type="checkbox" id="vendor" value="Vendor" v-model="checkedUserType">
       <label class="mr-1" for="vendor">Vendor</label>
-      <input type="checkbox" id="affiliate" value="Affiliate" v-model="checkedUserType">
+      <input class="mr-1" type="checkbox" id="affiliate" value="Affiliate" v-model="checkedUserType">
       <label class="mr-1" for="affilate">Affilate</label>
-      <input type="checkbox" id="customer" value="Customer" v-model="checkedUserType">
+      <input class="mr-1" type="checkbox" id="customer" value="Customer" v-model="checkedUserType">
       <label class="mr-1" for="customer">Customer</label>
     </div>
     
@@ -200,7 +200,7 @@ export default {
    border-radius: 8px;
    justify-content: center;
    text-align: justify;
-   margin-bottom: 30px !important;
+   margin-bottom: 10px !important;
    border-top: 2px solid rgb(182, 117, 243);
    width: 100%;
    max-width: 400px;
