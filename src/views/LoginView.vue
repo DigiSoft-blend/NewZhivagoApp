@@ -1,7 +1,7 @@
 <template>
   
   <div class="row p-0 m-0">
-   <Loader v-if="false" class="text-center"></Loader> 
+   <Loader v-if="true" class="text-center"></Loader> 
   <div class="col-md-6 h-100 bg-light text-dark">
          
   <main class="form-signin animate__animated animate__fadeInLeft">
