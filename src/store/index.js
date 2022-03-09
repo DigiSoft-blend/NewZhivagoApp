@@ -7,7 +7,9 @@ axios.defaults.baseURL = 'https://zhivago.herokuapp.com/api/auth'
 export default createStore({
     state:{
       token: localStorage.getItem('token') || null,  
-      Name: 'welcome'
+      Name: 'welcome',
+      loading: false,
+      
     },
     getters:{
         getName(state){
@@ -16,13 +18,16 @@ export default createStore({
         getToken(state){
             return state.token
         },
+        getLoader(state){
+          return state.loading
+        },
     },
    
     actions:{
 
         register(context, credentials){
    
-            // context.commit('getLoader', true)
+            context.commit('getLoader', true)
             axios.defaults.headers.common['Content-Type'] = 'application/ecmascript',
             axios.defaults.headers.common['Accept'] = 'application/json'
             
@@ -41,13 +46,13 @@ export default createStore({
               const token = response.data.data.token 
               localStorage.setItem('token', token)
               context.commit('registerUser', token)
-            //   context.commit('getLoader',false)
+              context.commit('getLoader',false)
               resolve(response)
         
             })
             .catch(error => {
               console.log(error)
-            //   context.commit('getLoader',false)
+              context.commit('getLoader',false)
               reject(error)
             })
           })
@@ -55,7 +60,7 @@ export default createStore({
 
         login(context, credentials){
 
-            // context.commit('getLoader', true)
+          context.commit('getLoader', true)
           //Tell axios the header you want
           axios.defaults.headers.common['Content-Type'] = 'application/ecmascript',
           axios.defaults.headers.common['Accept'] = 'application/json'
@@ -70,10 +75,10 @@ export default createStore({
                localStorage.setItem('token', token)
                context.commit('login', token)
                resolve(response)
-            //    context.commit('getLoader', false)
+               context.commit('getLoader', false)
                })
                .catch(error => {
-            //    context.commit('getLoader',false)
+                context.commit('getLoader',false)
                console.log(error)
                reject(error)
                })
@@ -86,6 +91,9 @@ export default createStore({
         register(state, token){
             state.token = token
         },
+        getLoader(state, payLoad){
+          state.loading = payLoad
+        }, 
     }
 })
 

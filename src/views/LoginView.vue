@@ -1,7 +1,7 @@
 <template>
   
   <div class="row p-0 m-0">
-   <Loader v-if="true" class="text-center"></Loader> 
+   <Loader v-if="getLoader" class="text-center"></Loader> 
   <div class="col-md-6 h-100 bg-light text-dark">
          
   <main class="form-signin animate__animated animate__fadeInLeft">
@@ -96,7 +96,11 @@
 import Loader from "./Loader.vue";
 export default {
     name: "login",
-    computed: {},
+    computed: {
+      getLoader() {
+       return this.$store.getters.getLoader
+     }
+    },
     data() {
         return {
             email: "",

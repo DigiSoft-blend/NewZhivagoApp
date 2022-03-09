@@ -2,10 +2,9 @@
   
  
   <div class="row p-0 m-0">
-    
+     <Loader v-if="getLoader" class="text-center"></Loader>
   <div class="col-md-6 bg-light text-dark">
-     
-      
+         
   <h1 class="fw-normal mt-4 mb-3 text-center p-0 animate__animated animate__fadeInLeft">Create an Account</h1>
       <div class="diva animate__animated animate__fadeInLeft">
         <i class="mdi mdi-information text-info icond"></i><p class="ml-4">Registration for this site is easy. just fill in the fields below. and we'll get a new account set up for you in no time.</p>
@@ -133,8 +132,14 @@
 
 
 <script>
-
+import Loader from "./Loader.vue";
 export default {
+  name: 'register',
+  computed:{
+    getLoader() {
+       return this.$store.getters.getLoader
+     }
+  },
   data(){
     return{
       form1Visible: true,
@@ -184,7 +189,10 @@ export default {
              })
        }
 
-  }
+  },
+
+   components: { Loader }
+
 }
 </script>
 
