@@ -1,60 +1,10 @@
 <template>
-  
-  <div class="row p-0 m-0">
-   <Loader v-if="getLoader" class="text-center"></Loader> 
-  <div class="col-md-6 h-100 bg-light text-dark">
-         
-  <main class="form-signin animate__animated animate__fadeInLeft">
-    
-  <form @submit="login">
-    <div class="mt-5">
-      <h1 class="h3 mb-3 fw-normal text-center"><img src="/assets/images/zhivago-logo.png" alt="logo" height="70px" width="320px" /></h1>
-    </div>
-    <h1  class="h3 mb-3 fw-normal text-center">Welcome</h1>
 
-    <p class="text-muted text-center p-4">Get connected with everything !</p>
-
+ <div class="row p-0 m-0">
     
-       <div class="search mb-3">
-         <i class="mdi mdi-account text-info icon"></i>
-          <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Email" required> 
-       </div>
-    
-    
-      <div class="search">
-         <i class="mdi mdi-key text-primary icon"></i> 
-         <input v-model="password" type="password" class="inp bg-light input-field" placeholder="Password" required> 
-       </div>
-    
-    <!-- {{ $store.getters.getUser }} -->
-       <!-- <li>{{ getUser.name }}</li>
-       <li>{{ getUser.username }}</li>
-       <li>{{ getUser.email }}</li> -->
+   <Loader v-if="getLoader" class="text-center"></Loader>
 
-    <div class="text-muted mb-1 mt-2 d-flex justify-content-between pt-1">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember 
-      </label>
-      <p>Lost Password ?</p>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary zbtn" type="submit">Sign in</button>
-    <div class="text-center p-2">
-       <router-link to="/register">Create an account</router-link> 
-    </div>
-
-     <div class="col-md-12 m-0 p-4 text-center  pb-3 animate__animated animate__bounce" style="font-size:20px">
-        <a href="https://web.facebook.com/silas.udofia.52/"><span class="mdi mdi-facebook text-primary p-2  circle"></span></a> 
-        <a href="https://api.whatsapp.com/send?phone=2348160595927"><span class="mdi mdi-twitter text-info ml-4 p-2   circle"></span></a>  
-        <a href="https://www.linkedin.com/in/silas-udofia-5244b8229/"><span class="mdi mdi-google text-danger ml-4  p-2   circle"></span></a>
-        <a href="https://github.com/DigiSoft-blend"><span class="mdi mdi-linkedin text-primary ml-4  p-2  circle"></span></a> 
-    </div>
-  
-  </form>
-</main>
-
-</div>
-  
-<div class="col-md-6 bimg d-none d-md-block">
+   <div class="col-md-12 bimg">
 
  <div class="cover-container d-flex w-100 hight p-3 mx-auto flex-column animate__animated animate__fadeInRight">
   <header class="mb-auto">
@@ -62,8 +12,8 @@
      
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a href="" class="nav-link a1"><i class="fa fa-bag-shopping text-light"></i></a>
-        <router-link class="nav-link active a1" to="/login">Login</router-link>
-        <router-link class="nav-link a1" to="/register">Register</router-link>
+        <router-link class="nav-link active a1" to="/login">Log out</router-link>
+        <!-- <router-link class="nav-link a1" to="/register"></router-link> -->
       </nav>
     </div>
 
@@ -71,75 +21,45 @@
 
   <div class="container m-0 p-5 mt-5 text-light">
     <div class="col-md-8">
-      <p style="font-size:24px">______ &nbsp;  Join the club</p>
-     <h1>Join gozillions of people</h1>
+      <p style="font-size:24px">______ &nbsp; Awsome! you just Joined the club</p>
+     <h1>Welcome {{ getUser.name }} </h1>
     </div>
-  
+
+       <li>{{ getUser.name }}</li>
+       <li>{{ getUser.username }}</li>
+       <li>{{ getUser.email }}</li> 
+
+    <!-- <p class="mt-4" > At vero eos et accusamus et iusto cadreto margoposito ensextaro marcopolo abokina nigeria and rusia</p>
      <p class="mt-4">
       <router-link class="btn btn-secondary  border-white bg-transparent btnz2 text-light" to="/register">Register</router-link>
-    </p>
+    </p> -->
 
     
   </div>
-   
-    <div class="mt-1 text-light" style="font-size:20px">
-        <i class="mdi mdi-arrow-left  p-2  circle2"></i>
-        <i class="mdi mdi-arrow-right  ml-4 p-2   circle2"></i> 
-    </div>
+    
  
 </div>
-    </div>
-  </div>
+ </div>
+ </div>
 </template>
 
-
-
 <script>
-import Loader from "./Loader.vue";
+import Loader from "./Loader.vue"
 export default {
-    name: "login",
-    computed: {
-      getLoader() {
+   computed:{
+       getUser(){
+         return  this.$store.getters.getUser
+       },
+       getLoader() {
        return this.$store.getters.getLoader
-     },
-     getUser(){
-       return this.$store.getters.getUser
-     }
-    },
-    data() {
-        return {
-            email: "",
-            password: "",
-            // errorMessage: '',
-        };
-    },
-    methods: {
-        login(e) {
-            e.preventDefault();
-            this.$store.dispatch("login", {
-                email: this.email,
-                password: this.password,
-            })
-                .then(response => {
-                // this.errorMessage = '';
-                this.$router.push({ name: 'dashboard'})
-                console.log(response);
-            })
-                .catch(error => {
-                //  this.errorMessage = error.response.data.message; 
-                console.log(error);
-            });
-        },
-    },
-    components: { Loader }
+       },
+   } ,
+   components:{Loader} 
 }
 </script>
 
-
-
-
-<style scoped>
-
+<style scoped >
+ 
 main{
   height: 100vh;
 }
@@ -225,9 +145,9 @@ a{
 }
 
 .form-signin {
-  width: 100%;
+  width: 200%;
   max-width: 330px;
-  padding: 15px;
+  padding: 20px;
   margin: auto;
 }
 
@@ -343,6 +263,5 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
-
 
 </style>

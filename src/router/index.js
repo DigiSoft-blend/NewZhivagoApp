@@ -27,10 +27,16 @@ import AboutViewVue from '../views/AboutView.vue'
 import HomeView from '../views/HomeView.vue'
 import LoginViewVue from '../views/LoginView.vue'
 import RegisterViewVue from '../views/RegisterView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
+import DashboardView from '../views/DashboardView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/notfound',
+      component: NotFoundView
+    },
     {
       path: '/',
       name: 'home',
@@ -51,7 +57,11 @@ const router = createRouter({
       name: 'login',
       component: LoginViewVue
     },
-   
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardView
+    },
   ]
 })
 

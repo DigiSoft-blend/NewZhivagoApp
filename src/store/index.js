@@ -9,7 +9,7 @@ export default createStore({
       token: localStorage.getItem('token') || null,  
       Name: 'welcome',
       loading: false,
-      
+      user: []
     },
     getters:{
         getName(state){
@@ -21,6 +21,9 @@ export default createStore({
         getLoader(state){
           return state.loading
         },
+        getUser(state){
+          return state.user
+        }
     },
    
     actions:{
@@ -72,8 +75,10 @@ export default createStore({
                })
                .then(response => {
                const token = response.data.data.token 
+               const user = response.data.data.user
                localStorage.setItem('token', token)
                context.commit('login', token)
+               context.commit('getUser', user)
                resolve(response)
                context.commit('getLoader', false)
                })
@@ -94,6 +99,9 @@ export default createStore({
         getLoader(state, payLoad){
           state.loading = payLoad
         }, 
+        getUser(state, user){
+          state.user = user
+        }
     }
 })
 
