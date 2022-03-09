@@ -68,7 +68,7 @@
        </div>
     
  
-    <div class="text-muted mb-1 mt-1 text-center" style="font-size:15px">
+    <div class="text-muted mb-1 mt-1 text-left" style="font-size:15px">
       <p class="text-muted p-0 mb-2 mt-3 ">Registration Type (required)</p>
      
       <input class="mr-1" type="checkbox" id="talent" value="Talent" v-model="checkedUserType">
