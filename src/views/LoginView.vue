@@ -1,10 +1,11 @@
 <template>
   
   <div class="row p-0 m-0">
-    
+   <Loader v-if="false" class="text-center"></Loader> 
   <div class="col-md-6 h-100 bg-light text-dark">
          
   <main class="form-signin animate__animated animate__fadeInLeft">
+    
   <form @submit="login">
     <div class="mt-5">
       <h1 class="h3 mb-3 fw-normal text-center"><img src="/assets/images/zhivago-logo.png" alt="logo" height="70px" width="320px" /></h1>
@@ -92,41 +93,36 @@
 
 
 <script>
+import Loader from "./Loader.vue";
 export default {
-
- name: "login",
-
- computed:{
-    
- },
- 
-    data(){
+    name: "login",
+    computed: {},
+    data() {
         return {
-          email: '',
-          password: '',
-          // errorMessage: '',
-        }
+            email: "",
+            password: "",
+            // errorMessage: '',
+        };
     },
-
-     methods:{
-
-    login(e){
-        e.preventDefault();
-        this.$store.dispatch('login', {
-          email: this.email,
-          password: this.password,
-        })
-        .then(response => {
-          // this.errorMessage = '';
-          // this.$router.push({ name: 'TaskList'})
-          console.log(response)
-        })
-        .catch(error => {
-              //  this.errorMessage = error.response.data.message; 
-            console.log(error);
-        })
-     },
-   }
+    methods: {
+        login(e) {
+            e.preventDefault();
+            this.$store.dispatch("login", {
+                email: this.email,
+                password: this.password,
+            })
+                .then(response => {
+                // this.errorMessage = '';
+                // this.$router.push({ name: 'TaskList'})
+                console.log(response);
+            })
+                .catch(error => {
+                //  this.errorMessage = error.response.data.message; 
+                console.log(error);
+            });
+        },
+    },
+    components: { Loader }
 }
 </script>
 
