@@ -164,7 +164,9 @@ export default {
       phone: '',
       checkedUserType: [],
 
-      errStatus: ''
+      errStatus: '',
+      // regStatus: '',
+      // regMessage: ''
     }
   },
   methods:{
@@ -189,9 +191,11 @@ export default {
                 user_type: this.checkedUserType
              })
              .then(response => {
-              //  this.errorMessage = '';
-              //  this.$router.push({ name: 'login'})
-              console.log(response)
+              // this.regStatus  = error.response.data.success
+              // if(this.regStatus == true){
+              //   this.regMessage = "Your registration was successfull"
+              // }
+              this.$router.push({ name: 'login'})
              })
              .catch(error => { 
                  this.errStatus  = error.response.data.success
