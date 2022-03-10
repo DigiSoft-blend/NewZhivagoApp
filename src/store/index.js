@@ -9,9 +9,18 @@ export default createStore({
       token: localStorage.getItem('token') || null,  
       Name: 'welcome',
       loading: false,
-      user: []
+      user: [],
+      loginError: '',
+      registrationError: '',
     },
     getters:{
+        getRegistrationError(state){
+          return state.registrationError
+        },
+        
+        getLoginError(state){
+          return state.loginError
+        },
         getName(state){
             return state.Name
         },
@@ -29,7 +38,9 @@ export default createStore({
     actions:{
 
         register(context, credentials){
-   
+            
+            context.state.registrationError = ''
+            
             context.commit('getLoader', true)
             axios.defaults.headers.common['Content-Type'] = 'application/ecmascript',
             axios.defaults.headers.common['Accept'] = 'application/json'
@@ -54,8 +65,9 @@ export default createStore({
         
             })
             .catch(error => {
-              console.log(error)
               context.commit('getLoader',false)
+              const regError = error.response.data.error.fields
+              context.commit('getRegistrationError', regError)
               reject(error)
             })
           })
@@ -79,13 +91,15 @@ export default createStore({
                localStorage.setItem('token', token)
                context.commit('login', token)
                context.commit('getUser', user)
+              
                resolve(response)
                context.commit('getLoader', false)
                })
                .catch(error => {
                 context.commit('getLoader',false)
-               console.log(error)
-               reject(error)
+                const rror = error.response.data.error.fields.email[0]
+                context.commit('getLoginError', rror)
+                reject(error)
                })
            })
        },
@@ -101,6 +115,12 @@ export default createStore({
         }, 
         getUser(state, user){
           state.user = user
+        },
+        getLoginError(state, error){
+          state.loginError = error
+        },
+        getRegistrationError(state, error){
+          state.registrationError = error
         }
     }
 })

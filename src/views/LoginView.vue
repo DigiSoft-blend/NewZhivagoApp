@@ -26,7 +26,8 @@
          <input v-model="password" type="password" class="inp bg-light input-field" placeholder="Password" required> 
        </div>
     
-    <!-- {{ $store.getters.getUser }} -->
+      <p class="text-danger text-center mt-2">{{ getLoginError }}</p>
+   
        <!-- <li>{{ getUser.name }}</li>
        <li>{{ getUser.username }}</li>
        <li>{{ getUser.email }}</li> -->
@@ -35,7 +36,9 @@
       <label>
         <input type="checkbox" value="remember-me"> Remember 
       </label>
-      <p>Lost Password ?</p>
+      <router-link to="/">
+         <p>Lost Password ?</p>
+      </router-link>
     </div>
     <button class="w-100 btn btn-lg btn-primary zbtn" type="submit">Sign in</button>
     <div class="text-center p-2">
@@ -104,6 +107,9 @@ export default {
      },
      getUser(){
        return this.$store.getters.getUser
+     },
+     getLoginError(){
+       return this.$store.getters.getLoginError
      }
     },
     data() {

@@ -17,15 +17,17 @@
       <div class="d-flex justify-content-center m-0 p-0">
         <i v-if="form2Visible" @click="btn2" class="mdi mdi-menu-up text-primary  text-center m-0 p-0" style="font-size:40px"></i> 
       </div>
-     <section v-if="form1Visible" class="animate__animated animate__fadeInLeft">
+     <section v-if="form1Visible"  class="animate__animated animate__fadeInLeft">
       <div class="search mb-3">
          <i class="mdi mdi-account text-primary icon"></i> 
          <input v-model="username" type="text" class="inp bg-light input-field" placeholder="Username" required> 
+         <p  class="mt-2 text-danger" style="font-size:12px">{{ getRegistrationError.username }}</p>
        </div>
 
       <div class="search mb-3">
          <i class="mdi mdi-email text-primary icon"></i> 
          <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Email Address" required> 
+          <p  class="mt-2 text-danger" style="font-size:12px">{{ getRegistrationError.email }}</p>
        </div>
     
     
@@ -37,6 +39,7 @@
        <div class="search">
          <i class="mdi mdi-key text-warning icon"></i>
           <input v-model="password_confirmation" type="password" class="inp bg-light input-field" placeholder="Confirme Password" required> 
+         <p class="mt-2 text-danger" style="font-size:12px">{{ getRegistrationError.password }}</p>
        </div>
 
     
@@ -52,7 +55,7 @@
   <section v-if="form2Visible" class="animate__animated animate__bounce">
      <div class="search mb-3">
          <i class="mdi mdi-face text-info icon"></i>
-          <input v-model="firstName" type="text" class="inp bg-light input-field" placeholder="First Name" required> 
+          <input v-model="firstName" type="text" class="inp bg-light input-field" placeholder="First Name" required > 
        </div>
     
     
@@ -79,6 +82,8 @@
       <input class="mr-1" type="checkbox" id="customer" value="Customer" v-model="checkedUserType">
       <label class="mr-1" for="customer">Customer</label>
     </div>
+ 
+     
     
     <button  class="w-100 btn btn-lg btn-primary zbtn mt-1" type="submit">Complete Sign Up</button>
    </section>
@@ -138,6 +143,9 @@ export default {
   computed:{
     getLoader() {
        return this.$store.getters.getLoader
+     },
+     getRegistrationError(){
+       return this.$store.getters.getRegistrationError
      }
   },
   data(){
@@ -155,6 +163,8 @@ export default {
       lastName: '',
       phone: '',
       checkedUserType: [],
+
+      errStatus: ''
     }
   },
   methods:{
@@ -183,9 +193,12 @@ export default {
               //  this.$router.push({ name: 'login'})
               console.log(response)
              })
-             .catch(error => {
-                //  this.errorMessage = error.response.data.errors; 
-                 console.log(error);
+             .catch(error => { 
+                 this.errStatus  = error.response.data.success
+                 if(this.errStatus == false){
+                    this.form1Visible = true
+                    this.form2Visible = false
+                 }
              })
        }
 
