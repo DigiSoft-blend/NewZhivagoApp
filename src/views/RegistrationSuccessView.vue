@@ -19,13 +19,15 @@
   </header>
 
   <div class="container m-0 p-5 mt-5 text-dark">
-    <div class="col-md-8">
-      <p style="font-size:24px">______ &nbsp;  Join the club</p>
-     <h1>Join gozillions of people</h1>
+    <div class="col-md-8 mt-5">
+      <p style="font-size:24px">{{ getUser.email }}</p>
+     <h2>Congratulations !</h2>
+       <p class="text-dark">{{ getUser.name }}</p> 
+     <p>your account has been created successfully</p>
     </div>
   
-     <p class="mt-4">
-      <router-link class="btn btn-secondary  border-white bg-transparent btnz2 text-light" to="/register">Register</router-link>
+     <p class="mt-5">
+      <router-link class="btn btn-lg btn-success btnz2 text-light" to="/login">Get started</router-link>
     </p>
 
     

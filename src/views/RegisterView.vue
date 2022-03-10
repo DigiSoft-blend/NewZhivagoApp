@@ -194,11 +194,7 @@ export default {
                 user_type: this.checkedUserType
              })
              .then(response => {
-              // this.regStatus  = error.response.data.success
-              // if(this.regStatus == true){
-              //   this.regMessage = "Your registration was successfull"
-              // }
-              this.$router.push({ name: 'login'})
+              this.$router.push({ name: 'registrationsuccess'})
              })
              .catch(error => { 
                  this.errStatus  = error.response.data.success

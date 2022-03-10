@@ -66,8 +66,10 @@ export default createStore({
             .then(response => {
         
               const token = response.data.data.token 
+              const user = response.data.data.user
               localStorage.setItem('token', token)
               context.commit('registerUser', token)
+              context.commit('getUser', user)
               context.commit('getLoader',false)
               resolve(response)
         
