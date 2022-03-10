@@ -78,7 +78,7 @@
       <input class="mr-1" type="checkbox" id="vendor" value="Vendor" v-model="checkedUserType">
       <label class="mr-1" for="vendor">Vendor</label>
       <input class="mr-1" type="checkbox" id="affiliate" value="Affiliate" v-model="checkedUserType">
-      <label class="mr-1" for="affilate">Affilate</label>
+      <label class="mr-1" for="affilate">Affiliate</label>
       <input class="mr-1" type="checkbox" id="customer" value="Customer" v-model="checkedUserType">
       <label class="mr-1" for="customer">Customer</label>
     </div>
