@@ -1,9 +1,9 @@
 <template>
   
  
-  <div class="row p-0 m-0">
+  <div class="row p-0 m-0 bg-light">
      <Loader v-if="getLoader" class="text-center"></Loader>
-  <div class="col-md-6 bg-light text-dark">
+  <div class="col-md-6 h-100 bg-light text-dark">
          
   <h1 class="fw-normal mt-4 mb-3 text-center p-0 animate__animated animate__fadeInLeft">Create an Account</h1>
       <div class="diva animate__animated animate__fadeInLeft">

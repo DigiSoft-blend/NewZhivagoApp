@@ -1,6 +1,6 @@
 <template>
   
-  <div class="row p-0 m-0">
+  <div class="row p-0 m-0 bg-light">
    <Loader v-if="getLoader" class="text-center"></Loader> 
   <div class="col-md-6 h-100 bg-light text-dark">
          
@@ -43,12 +43,12 @@
        <router-link to="/register">Create an account</router-link> 
     </div>
 
-     <div class="col-md-12 m-0 p-4 text-center  pb-3 animate__animated animate__bounce" style="font-size:20px">
+     <!-- <div class="col-md-12 m-0 p-4 text-center  pb-3 animate__animated animate__bounce" style="font-size:20px">
         <a href="https://web.facebook.com/silas.udofia.52/"><span class="mdi mdi-facebook text-primary p-2  circle"></span></a> 
         <a href="https://api.whatsapp.com/send?phone=2348160595927"><span class="mdi mdi-twitter text-info ml-4 p-2   circle"></span></a>  
         <a href="https://www.linkedin.com/in/silas-udofia-5244b8229/"><span class="mdi mdi-google text-danger ml-4  p-2   circle"></span></a>
         <a href="https://github.com/DigiSoft-blend"><span class="mdi mdi-linkedin text-primary ml-4  p-2  circle"></span></a> 
-    </div>
+    </div> -->
   
   </form>
 </main>
