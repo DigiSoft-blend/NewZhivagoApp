@@ -146,9 +146,9 @@ export default {
 
 <style scoped>
 
-.col-md-6{
+/* .col-md-6{
   height: 100vh;
-}
+} */
 
 .search {
     position: relative;
