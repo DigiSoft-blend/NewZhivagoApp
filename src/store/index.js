@@ -12,8 +12,16 @@ export default createStore({
       user: [],
       loginError: '',
       registrationError: '',
+      forgotPasswordError: '',
+      messageForgotPassword: ''
     },
     getters:{
+        getForgotPasswordError(state){
+          return state.forgotPasswordError
+        },
+        getForgotPasswordMessage(state){
+          return state.messageForgotPassword
+        },
         getRegistrationError(state){
           return state.registrationError
         },
@@ -76,7 +84,7 @@ export default createStore({
         login(context, credentials){
           
           context.state.loginError = ''
-
+         
           context.commit('getLoader', true)
           //Tell axios the header you want
           axios.defaults.headers.common['Content-Type'] = 'application/ecmascript',
@@ -106,6 +114,34 @@ export default createStore({
            })
        },
 
+       forgotPassword(context, credentials){
+        context.state.messageForgotPassword = ''
+        context.state.forgotPasswordError = ''
+        context.commit('getLoader', true)
+        //Tell axios the header you want
+        axios.defaults.headers.common['Content-Type'] = 'application/ecmascript',
+        axios.defaults.headers.common['Accept'] = 'application/json'
+     
+         return new Promise(( resolve, reject) => {
+             axios.post('/forgot-password', {
+             email: credentials.email,
+             })
+             .then(response => {
+             const message = response.data.data.message 
+             context.commit('getForgotPasswordMessage', message)
+           
+             resolve(response)
+             context.commit('getLoader', false)
+             })
+             .catch(error => {
+              context.commit('getLoader',false)
+              const rror = error.response.data.error.fields.email[0]
+              context.commit('getForgotPasswordError', rror)
+              reject(error)
+             })
+         })
+     },
+
     },
 
     mutations:{
@@ -123,6 +159,12 @@ export default createStore({
         },
         getRegistrationError(state, error){
           state.registrationError = error
+        },
+        getForgotPasswordMessage(state, message){
+           state.messageForgotPassword = message
+        },
+        getForgotPasswordError(state, error){
+          state.forgotPasswordError = error
         }
     }
 })

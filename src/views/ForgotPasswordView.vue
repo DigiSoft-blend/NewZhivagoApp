@@ -3,51 +3,29 @@
   <div class="row p-0 m-0">
    <Loader v-if="getLoader" class="text-center"></Loader> 
   <div class="col-md-6 h-100 bg-light text-dark">
-         
+      <h1  class="h3 mb-3 mt-5 text-danger fw-normal text-center">Forgot Password </h1>
+      <div class="diva mt-5 animate__animated animate__fadeInLeft">
+        <i class="mdi mdi-information text-info icond"></i><p class="ml-4">Forgot your password ? Never to worry! please enter your email address</p>
+      </div>
   <main class="form-signin animate__animated animate__fadeInLeft">
     
-  <form @submit="login">
-    <div class="mt-5">
-      <h1 class="h3 mb-3 fw-normal text-center"><img src="/assets/images/zhivago-logo.png" alt="logo" height="70px" width="320px" /></h1>
-    </div>
-    <h1  class="h3 mb-3 fw-normal text-center">Welcome</h1>
-
-    <p class="text-muted text-center p-4">Get connected with everything !</p>
-
+  <form @submit="forgot">
     
        <div class="search mb-3">
          <i class="mdi mdi-account text-info icon"></i>
-          <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Email" required> 
+          <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Your email" required> 
        </div>
     
     
-      <div class="search">
-         <i class="mdi mdi-key text-primary icon"></i> 
-         <input v-model="password" type="password" class="inp bg-light input-field" placeholder="Password" required> 
-       </div>
+      <h4 class="text-success text-center mt-2 animate__animated animate__bounce">{{ getForgotPasswordMessage }}</h4>
+      <p class="text-center text-danger">{{ getForgotPasswordError }}</p>
     
-      <!-- <p class="text-danger text-center mt-2">{{ getLoginError }}</p>
-    -->
-       
-
     <div class="text-muted mb-1 mt-2 d-flex justify-content-between pt-1">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember 
-      </label>
-      <router-link to="/forgotpassword">
-         <p>Lost Password ?</p>
-      </router-link>
+    
     </div>
-    <button class="w-100 btn btn-lg btn-primary zbtn" type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary zbtn" type="submit">Continue</button>
     <div class="text-center p-2">
-       <router-link to="/register">Create an account</router-link> 
-    </div>
-
-     <div class="col-md-12 m-0 p-4 text-center  pb-3 animate__animated animate__bounce" style="font-size:20px">
-        <a href="https://web.facebook.com/silas.udofia.52/"><span class="mdi mdi-facebook text-primary p-2  circle"></span></a> 
-        <a href="https://api.whatsapp.com/send?phone=2348160595927"><span class="mdi mdi-twitter text-info ml-4 p-2   circle"></span></a>  
-        <a href="https://www.linkedin.com/in/silas-udofia-5244b8229/"><span class="mdi mdi-google text-danger ml-4  p-2   circle"></span></a>
-        <a href="https://github.com/DigiSoft-blend"><span class="mdi mdi-linkedin text-primary ml-4  p-2  circle"></span></a> 
+      <span>Or go back to</span>  <router-link to="/login"> Log in</router-link> 
     </div>
   
   </form>
@@ -98,38 +76,33 @@
 <script>
 import Loader from "./Loader.vue";
 export default {
-    name: "Forgot",
+    name: "login",
     computed: {
-     getLoader() {
+      getLoader() {
        return this.$store.getters.getLoader
      },
-     getUser(){
-       return this.$store.getters.getUser
-     },
-     getLoginError(){
-       return this.$store.getters.getLoginError
-     }
+      getForgotPasswordMessage(){
+          return this.$store.getters.getForgotPasswordMessage
+      },
+      getForgotPasswordError(){
+         return this.$store.getters.getForgotPasswordError
+      }
     },
     data() {
         return {
             email: "",
-            password: "",
         };
     },
     methods: {
-        login(e) {
+        forgot(e) {
             e.preventDefault();
-            this.$store.dispatch("login", {
+            this.$store.dispatch("forgotPassword", {
                 email: this.email,
-                password: this.password,
             })
-                .then(response => {
-                this.errorMessage = '';
-                this.$router.push({ name: 'dashboard'})
-                console.log(response);
+            .then(response => {
+                //this.$router.push({ name: 'login'})
             })
-                .catch(error => {
-                this.errorMessage = error.response.data.message; 
+            .catch(error => {
                 console.log(error);
             });
         },
@@ -146,6 +119,27 @@ export default {
 main{
   height: 100vh;
 }
+
+.diva{
+   box-shadow: 0px 1px 3px 0px rgb(217, 219, 219);
+   border-radius: 8px;
+   justify-content: center;
+   text-align: center;
+   margin-bottom: 10px !important;
+   border-top: 2px solid rgb(182, 117, 243);
+   width: 100%;
+   max-width: 400px;
+   padding: 15px;
+   margin: auto;
+   position: relative;
+}
+
+.diva .icond {
+    position: absolute;
+    top: 12px;
+    left: 12px
+}
+
 
 .search {
     position: relative;
