@@ -1,9 +1,9 @@
 <template>
   
  
-  <div class="row p-0 m-0 bg-light">
+  <div class="row p-0 m-0">
      <Loader v-if="getLoader" class="text-center"></Loader>
-  <div class="col-md-6 h-100 bg-light text-dark">
+  <div class="col-md-6  bg-light text-dark">
          
   <h1 class="fw-normal mt-4 mb-3 text-center p-0 animate__animated animate__fadeInLeft">Create an Account</h1>
       <div class="diva animate__animated animate__fadeInLeft">
@@ -221,7 +221,7 @@ export default {
 <style scoped>
 
 .col-md-6{
-  height: 100vh;
+  height: 100vh !important;
 }
 .diva{
    box-shadow: 0px 1px 3px 0px rgb(217, 219, 219);

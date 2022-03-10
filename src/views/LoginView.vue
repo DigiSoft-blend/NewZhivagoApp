@@ -1,8 +1,8 @@
 <template>
   
-  <div class="row p-0 m-0  h-100 bg-light">
+  <div class="row p-0 m-0">
    <Loader v-if="getLoader" class="text-center"></Loader> 
-  <div class="col-md-6   bg-light text-dark">
+  <div class="col-md-6 bg-light text-dark">
          
   <main class="form-signin animate__animated animate__fadeInLeft">
     
@@ -147,7 +147,7 @@ export default {
 <style scoped>
 
 .col-md-6{
-  height: 100vh;
+  height: 100vh !important;
 }
 
 .search {
