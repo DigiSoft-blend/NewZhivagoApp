@@ -1,8 +1,8 @@
 <template>
   
-  <div class="row p-0 m-0 bg-light">
+  <div class="row p-0 m-0  h-100 bg-light">
    <Loader v-if="getLoader" class="text-center"></Loader> 
-  <div class="col-md-6 h-100 bg-light text-dark">
+  <div class="col-md-6  bg-light text-dark">
          
   <main class="form-signin animate__animated animate__fadeInLeft">
     
