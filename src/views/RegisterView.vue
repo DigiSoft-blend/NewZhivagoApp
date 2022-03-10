@@ -113,9 +113,9 @@
   <div class="container m-0 p-5 mt-5 text-light">
     <div class="col-md-8">
       <p style="font-size:24px">______ &nbsp;  Join the club</p>
-     <h1>Join gozillions of people</h1>
+     <h1>Join millions of people</h1>
     </div>
-    <p class="mt-4" > At vero eos et accusamus et iusto cadreto margoposito ensextaro marcopolo abokina nigeria and rusia</p>
+    <p class="mt-4" > </p>
      <p class="mt-4">
      <router-link class="btn btn-secondary  border-white bg-transparent btnz2 text-light" to="/login">login</router-link>
     </p>
