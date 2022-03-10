@@ -26,8 +26,8 @@
          <input v-model="password" type="password" class="inp bg-light input-field" placeholder="Password" required> 
        </div>
     
-      <!-- <p class="text-danger text-center mt-2">{{ getLoginError }}</p>
-    -->
+      <p class="text-danger text-center mt-2">{{ getLoginError }}</p>
+   
        
 
     <div class="text-muted mb-1 mt-2 d-flex justify-content-between pt-1">
