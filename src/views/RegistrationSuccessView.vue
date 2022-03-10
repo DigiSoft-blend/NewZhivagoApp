@@ -23,10 +23,10 @@
     
   </div> -->
    <main class="mr-2 p-4 w-100 cov text-dark">
-    <h2>Congratulations !</h2>
+    <p class="h2" style="font-size:24px">Congratulations !</p>
     <p class="lead">your account has been created successfully</p>
     <p class="lead">{{ getUser.email }}</p>
-    <p class="lead">
+    <p class="lead mt-5">
        <router-link class="btn btn-lg btn-success btnz2 text-light" to="/login">Get started</router-link>
     </p>
   </main>
