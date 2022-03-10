@@ -2,7 +2,7 @@
   
   <div class="row p-0 m-0">
    <Loader v-if="getLoader" class="text-center"></Loader> 
-  <div class="col-md-6 h-100 bg-light text-dark">
+  <div class="col-md-6  bg-light text-dark">
          
   <main class="form-signin animate__animated animate__fadeInLeft">
     
@@ -83,10 +83,10 @@
     
   </div>
    
-    <div class="mt-1 text-light" style="font-size:20px">
+    <!-- <div class="mt-1 text-light" style="font-size:20px">
         <i class="mdi mdi-arrow-left  p-2  circle2"></i>
         <i class="mdi mdi-arrow-right  ml-4 p-2   circle2"></i> 
-    </div>
+    </div> -->
  
 </div>
     </div>
@@ -146,7 +146,7 @@ export default {
 
 <style scoped>
 
-main{
+.col-md-6{
   height: 100vh;
 }
 

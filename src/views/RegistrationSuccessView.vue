@@ -2,45 +2,15 @@
   
   <div class="row p-0 m-0">
    <Loader v-if="getLoader" class="text-center"></Loader> 
-  <div class="col-md-6 h-100 bg-light text-dark">
-      <h1  class="h3 mb-3 mt-5 text-danger fw-normal text-center">Forgot Password </h1>
-      <div class="diva mt-5 animate__animated animate__fadeInLeft">
-        <i class="mdi mdi-information text-info icond"></i><p class="ml-4">Forgot your password ? Never to worry! please enter your email address</p>
-      </div>
-  <main class="form-signin animate__animated animate__fadeInLeft">
-    
-  <form @submit="forgot">
-    
-       <div class="search mb-3">
-         <i class="mdi mdi-account text-info icon"></i>
-          <input v-model="email" type="email" class="inp bg-light input-field" placeholder="Your email" required> 
-       </div>
-    
-    
-      <h4 class="text-success text-center mt-2 animate__animated animate__bounce">{{ getForgotPasswordMessage }}</h4>
-      <p class="text-center text-danger">{{ getForgotPasswordError }}</p>
-    
-    <div class="text-muted mb-1 mt-2 d-flex justify-content-between pt-1">
-    
-    </div>
-    <button class="w-100 btn btn-lg btn-primary zbtn" type="submit">Continue</button>
-    <div class="text-center p-2">
-      <span>Or go back to</span>  <router-link to="/login"> Log in</router-link> 
-    </div>
   
-  </form>
-</main>
+<div class="col-md-12 bg-light">
 
-</div>
-  
-<div class="col-md-6 bimg d-none d-md-block">
-
- <div class="cover-container d-flex w-100 hight p-3 mx-auto flex-column animate__animated animate__fadeInRight">
+ <div class="cover-container  d-flex w-100  p-3 mx-auto flex-column animate__animated animate__fadeInRight">
   <header class="mb-auto">
     <div>
      
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a href="" class="nav-link a1"><i class="fa fa-bag-shopping text-light"></i></a>
+      <nav class="nav  nav-masthead justify-content-center float-md-end">
+        <a href="" class="nav-link a1 "><i class="fa fa-bag-shopping text-light"></i></a>
         <router-link class="nav-link active a1" to="/login">Login</router-link>
         <router-link class="nav-link a1" to="/register">Register</router-link>
       </nav>
@@ -48,7 +18,7 @@
 
   </header>
 
-  <div class="container m-0 p-5 mt-5 text-light">
+  <div class="container m-0 p-5 mt-5 text-dark">
     <div class="col-md-8">
       <p style="font-size:24px">______ &nbsp;  Join the club</p>
      <h1>Join gozillions of people</h1>
@@ -76,36 +46,41 @@
 <script>
 import Loader from "./Loader.vue";
 export default {
-    name: "login",
+    name: "Forgot",
      created(){
-       this.$store.dispatch('clearForgotPasswordError')
+       this.$store.dispatch('clearLoginError')
      },
     computed: {
-      getLoader() {
+     getLoader() {
        return this.$store.getters.getLoader
      },
-      getForgotPasswordMessage(){
-          return this.$store.getters.getForgotPasswordMessage
-      },
-      getForgotPasswordError(){
-         return this.$store.getters.getForgotPasswordError
-      }
+     getUser(){
+       return this.$store.getters.getUser
+     },
+     getLoginError(){
+       return this.$store.getters.getLoginError
+     }
     },
     data() {
         return {
             email: "",
+            password: "",
         };
     },
     methods: {
-        forgot(e) {
+        login(e) {
             e.preventDefault();
-            this.$store.dispatch("forgotPassword", {
+            this.$store.dispatch("login", {
                 email: this.email,
+                password: this.password,
             })
-            .then(response => {
-                //this.$router.push({ name: 'login'})
+                .then(response => {
+                this.errorMessage = '';
+                this.$router.push({ name: 'dashboard'})
+                console.log(response);
             })
-            .catch(error => {
+                .catch(error => {
+                this.errorMessage = error.response.data.message; 
                 console.log(error);
             });
         },
@@ -119,30 +94,9 @@ export default {
 
 <style scoped>
 
-main{
+.col-md-12{
   height: 100vh;
 }
-
-.diva{
-   box-shadow: 0px 1px 3px 0px rgb(217, 219, 219);
-   border-radius: 8px;
-   justify-content: center;
-   text-align: center;
-   margin-bottom: 10px !important;
-   border-top: 2px solid rgb(182, 117, 243);
-   width: 100%;
-   max-width: 400px;
-   padding: 15px;
-   margin: auto;
-   position: relative;
-}
-
-.diva .icond {
-    position: absolute;
-    top: 12px;
-    left: 12px
-}
-
 
 .search {
     position: relative;
@@ -190,9 +144,9 @@ main{
             font-weight: bolder !important;
             
 }
-.hight{
+/* .hight{
   height: 400px !important;
-}
+} */
 
 
 a{

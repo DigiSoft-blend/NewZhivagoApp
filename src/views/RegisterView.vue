@@ -122,10 +122,10 @@
 
   </div>
    
-    <div class="mt-1 text-light" style="font-size:20px">
+    <!-- <div class="mt-1 text-light" style="font-size:20px">
         <i class="mdi mdi-arrow-left  p-2  circle2"></i>
         <i class="mdi mdi-arrow-right  ml-4 p-2   circle2"></i> 
-    </div>
+    </div> -->
  
     </div>
     </div>
