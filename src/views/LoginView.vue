@@ -99,6 +99,9 @@
 import Loader from "./Loader.vue";
 export default {
     name: "Forgot",
+     created(){
+       this.$store.dispatch('clearLoginError')
+     },
     computed: {
      getLoader() {
        return this.$store.getters.getLoader

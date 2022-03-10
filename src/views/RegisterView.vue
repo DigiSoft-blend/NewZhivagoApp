@@ -140,6 +140,9 @@
 import Loader from "./Loader.vue";
 export default {
   name: 'register',
+  created(){
+    this.$store.dispatch('clearRegistrationError')
+  },
   computed:{
     getLoader() {
        return this.$store.getters.getLoader

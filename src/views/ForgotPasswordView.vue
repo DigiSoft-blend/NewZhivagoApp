@@ -77,6 +77,9 @@
 import Loader from "./Loader.vue";
 export default {
     name: "login",
+     created(){
+       this.$store.dispatch('clearForgotPasswordError')
+     },
     computed: {
       getLoader() {
        return this.$store.getters.getLoader

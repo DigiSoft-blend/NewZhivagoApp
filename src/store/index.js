@@ -142,9 +142,30 @@ export default createStore({
          })
      },
 
+     clearRegistrationError(context){
+       context.commit('clearRegError', '')
+     },
+
+     clearLoginError(context){
+       context.commit('clearLoginError', '')
+     },
+     clearForgotPasswordError(context){
+       context.commit('clearForgotPasswordError', '')
+     }
+
     },
 
     mutations:{
+      clearForgotPasswordError(state, empty){
+        state.forgotPasswordError = empty
+        state.messageForgotPassword = empty
+      },
+        clearRegError(state, empty){
+          state.registrationError = empty
+        },
+        clearLoginError(state, empty){
+          state.loginError = empty
+        },
         register(state, token){
             state.token = token
         },
