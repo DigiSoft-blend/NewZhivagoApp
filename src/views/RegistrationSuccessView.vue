@@ -5,21 +5,11 @@
   
 <div class="col-md-12 bg-light">
 
- <div class="cover-container  d-flex w-100  p-3 mx-auto flex-column animate__animated animate__fadeInRight">
-  <header class="mb-auto">
-    <div>
-     
-      <nav class="nav  nav-masthead justify-content-center float-md-end">
-        <a href="" class="nav-link a1 "><i class="fa fa-bag-shopping text-light"></i></a>
-        <router-link class="nav-link active a1" to="/login">Login</router-link>
-        <router-link class="nav-link a1" to="/register">Register</router-link>
-      </nav>
-    </div>
+ <div class="text-center d-flex   p-3  animate__animated animate__fadeInRight"> -->
+  
 
-  </header>
-
-  <div class="container m-0 p-5 mt-5 text-dark">
-    <div class="col-md-8 mt-5">
+  <!-- <div class="container m-0  mt-5 text-dark">
+    <div class="col-md-12 ">
       <p style="font-size:24px">{{ getUser.email }}</p>
      <h2>Congratulations !</h2>
        <p class="text-dark">{{ getUser.name }}</p> 
@@ -31,7 +21,15 @@
     </p>
 
     
-  </div>
+  </div> -->
+   <main class="mr-2 p-4 w-100 cov text-dark">
+    <h2>Congratulations !</h2>
+    <p class="lead">your account has been created successfully</p>
+    <p class="lead">{{ getUser.email }}</p>
+    <p class="lead">
+       <router-link class="btn btn-lg btn-success btnz2 text-light" to="/login">Get started</router-link>
+    </p>
+  </main>
    
     <!-- <div class="mt-1 text-light" style="font-size:20px">
         <i class="mdi mdi-arrow-left  p-2  circle2"></i>
@@ -95,6 +93,10 @@ export default {
 
 
 <style scoped>
+
+.cov{
+  margin-top:15%
+}
 
 .col-md-12{
   height: 100vh;
@@ -270,7 +272,7 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 400px;
 }
 
 
