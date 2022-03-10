@@ -74,6 +74,8 @@ export default createStore({
         },
 
         login(context, credentials){
+          
+          context.state.loginError = ''
 
           context.commit('getLoader', true)
           //Tell axios the header you want
