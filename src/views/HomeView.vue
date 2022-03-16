@@ -7,7 +7,7 @@
           <router-link to="/"><img class="w-100" src="/assets/images/zhivago-logo.png" alt=""></router-link>
          </div>
         <div class="d-flex flex-grow-1 align-items-center justify-content-between pl-5">
-          <div class="search w-75 d-flex p-2 rounded align-items-center">
+          <div class="search w-75 d-flex p-2 rounded align-items-center shadow bg-body rounded">
             <!-- <font-awesome-icon icon="fa-thin fa-magnifying-glass" /> -->
             <span class="iconify" data-icon="charm:search"></span>
             <input type="text" placeholder="Search" class="w-100 p-2 flex-grow-1 outline-0 border-0 bg-transparent">
@@ -198,13 +198,13 @@ main{
   display: grid;
   grid-template-columns: 300px 1fr 300px;
   gap: 3em;
-  background: #EFFFFD;
+  background: #fff;
   margin-inline: auto;
 }
 
-.search{
+/* .search{
   background: #EFFFFD  !important;
-}
+} */
 
 .tp_img{
   width: 18%
