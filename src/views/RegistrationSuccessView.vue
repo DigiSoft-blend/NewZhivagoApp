@@ -17,7 +17,7 @@
     </div>
   
      <p class="mt-5">
-      <router-link class="btn btn-lg btn-success btnz2 text-light" to="/login">Get started</router-link>
+      <router-link class="btn btn-lg btn-success btnz2 text-light" to="/dashboard">Get started</router-link>
     </p>
 
     
