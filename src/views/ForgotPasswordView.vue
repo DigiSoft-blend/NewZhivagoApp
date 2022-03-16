@@ -1,8 +1,7 @@
 <template>
-  
   <div class="row p-0 m-0">
    <Loader v-if="getLoader" class="text-center"></Loader> 
-  <div class="col-md-6 h-100 bg-light text-dark">
+  <div class="col-md-6  text-dark">
       <h1  class="h3 mb-3 mt-5 text-danger fw-normal text-center">Forgot Password </h1>
       <div class="diva mt-5 animate__animated animate__fadeInLeft">
         <i class="mdi mdi-information text-info icond"></i><p class="ml-4">Forgot your password ? Never to worry! please enter your email address</p>
@@ -119,7 +118,7 @@ export default {
 
 <style scoped>
 
-main{
+.col-md-6{
   height: 100vh;
 }
 

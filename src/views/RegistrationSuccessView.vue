@@ -1,5 +1,5 @@
 <template>
-  
+   <link rel="stylesheet" href="/assets/css/style.css">
   <div class="row p-0 m-0">
    <Loader v-if="getLoader" class="text-center"></Loader> 
   

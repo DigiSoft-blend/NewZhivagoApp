@@ -1,14 +1,14 @@
 <template>
-  
  
   <div class="row p-0 m-0">
      <Loader v-if="getLoader" class="text-center"></Loader>
-  <div class="col-md-6  bg-light text-dark">
+  <div class="col-md-6 text-dark">
          
   <h1 class="fw-normal mt-4 mb-3 text-center p-0 animate__animated animate__fadeInLeft">Create an Account</h1>
       <div class="diva animate__animated animate__fadeInLeft">
-        <i class="mdi mdi-information text-info icond"></i><p class="ml-4">Registration for this site is easy. just fill in the fields below. and we'll get a new account set up for you in no time.</p>
+        <i class="mdi mdi-information text-info icond"></i><p class="p-diva">Registration for this site is easy. just fill in the fields below. and we'll get a new account set up for you in no time.</p>
       </div>
+      
   <main class="form-signin animate__animated animate__fadeInLeft">
     
   <form @submit="register">
@@ -231,11 +231,16 @@ export default {
    padding: 15px;
    margin: auto;
    position: relative;
+   
+}
+
+.p-diva{
+  margin-left: 20px;
 }
 
 .diva .icond {
     position: absolute;
-    top: 12px;
+    top: 14px;
     left: 12px
 }
 
@@ -256,14 +261,7 @@ export default {
     left: 1px
 }
 
-/* .search button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    height: 50px;
-    width: 110px;
-    background: blue
-} */
+
 
 
 .circle{
