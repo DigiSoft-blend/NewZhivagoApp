@@ -27,7 +27,7 @@
            <div class="side-menu-list-parent">
 
              <div class="side-menu-list member">
-               <a href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"><span class="iconify text-secondary fw-bolder" data-icon="eva:arrow-right-fill"></span>Members Central</a>
+               <a href=""><span class="iconify text-secondary fw-bolder" data-icon="eva:arrow-right-fill" href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"></span>Members Central</a>
                <div class="member_collapsed collapse" id="collapseExample">
                   <a href="" class="individual-member"><span >👋</span>Start here</a>
                   <a href="" class="individual-member"><span>😏</span>Introduce Yourself</a>
@@ -35,7 +35,7 @@
              </div>
 
              <div class="side-menu-list vip-group">
-               <a href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"><span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill"></span>VIP GROUPS</a>
+               <a href=""><span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"></span>VIP GROUPS</a>
                <div class="member_collapsed collapse" id="collapseExample2">
                   <a href="" class="individual-member"><span >🙋</span>Las Vegas Singles</a>
                   <a href="" class="individual-member"><span>💱</span>No mint Mark</a>
@@ -43,7 +43,7 @@
              </div>
 
              <div class="side-menu-list vip-group">
-               <a href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"><span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill"></span>Admins</a>
+               <a href=""><span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"></span>Admins</a>
                <div class="member_collapsed collapse" id="collapseExample3">
                   <a href="" class="individual-member"><span >😎</span>Zhivago Admins</a>
                </div>
@@ -96,7 +96,7 @@
            <div class="collapse comment-section" id="collapseExample4">
             <div class="text-center my-3">
               <h3>Post a omment</h3>
-              <div class="login-signup w-25 justify-content-around m-auto">
+              <div class="login-signup comment-login justify-content-around m-auto">
                 <button type="button" class="btn btn-outline-primary">Log in</button>
                 <button type="button" class="btn btn-primary">Sign up</button>
               </div>
@@ -170,11 +170,9 @@ export default {
 }
 </script>
 
-<style scoped >
 
-body{
-  height: 100vh;
-}
+<style scoped>
+
 
 header, main{
   max-width: 1440px;
@@ -268,6 +266,7 @@ main{
   color: hsl(219, 14%, 50%);
   margin: 0.5em 0;
   display: flex;
+  font-size: 0.9rem;
 }
 
 .member_collapsed a span{
@@ -276,6 +275,10 @@ main{
 
 .main-post-img{
   height: 500px;
+}
+
+.comment-login{
+  width: 26%;
 }
 
 @media screen and (max-width: 1200px){
@@ -295,6 +298,10 @@ main{
   .pos_absolute{
     width: 45%;
     left: 28%;
+  }
+
+  .comment-login{
+    width: 40%;
   }
 
 }
