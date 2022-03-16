@@ -13,8 +13,9 @@
             <input type="text" placeholder="Search" class="w-100 p-2 flex-grow-1 outline-0 border-0 bg-transparent">
           </div>
           <div class="login-signup">
-            <button type="button" class="btn btn-outline-primary">Log in</button>
-            <button type="button" class="btn btn-primary">Sign up</button>
+            <router-link class="nav-link active a1" to="/login"><button type="button" class="btn btn-outline-primary">Log in</button></router-link>
+            
+            <router-link class="nav-link a1" to="/register"><button type="button" class="btn btn-primary">Sign up</button></router-link>
           </div>
         </div>
        </header>
