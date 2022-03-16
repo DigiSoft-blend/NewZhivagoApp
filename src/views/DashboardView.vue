@@ -3,19 +3,44 @@
 <!-- row px-5 m-0 -->
      <div class="px-0 bg-light text-black">
        <Loader v-if="getLoader" class="text-center"></Loader> 
-       <header class="d-flex py-2 px-5 mx-auto align-items-center justify-content-between border-bottom bg-white">
+       <header class="d-flex py-2 px-5 mx-auto align-items-center justify-content-between border-bottom border-secondary bg-white">
          <div class="logo w-25">
           <router-link to="/"><img class="w-100" src="/assets/images/zhivago-logo.png" alt=""></router-link>
          </div>
         <div class="d-flex flex-grow-1 align-items-center justify-content-between pl-5">
-          <div class="search w-75 d-flex p-2 rounded">
+          <div class="search w-75 d-flex p-2 rounded align-items-center">
             <!-- <font-awesome-icon icon="fa-thin fa-magnifying-glass" /> -->
-            <i class="fa-solid fa-magnifying-glass text-black-50 d-flex align-items-center"></i>
+            <span class="iconify" data-icon="charm:search"></span>
             <input type="text" placeholder="Search" class="w-100 p-2 flex-grow-1 outline-0 border-0 bg-transparent">
           </div>
-          <div class="login-signup">
-            <button type="button" class="btn btn-outline-primary">Log in</button>
-            <button type="button" class="btn btn-primary">Sign up</button>
+          <div class="user-profile position-relative align-items-center">
+            <a href="#"><span class="iconify" style="font-size: 1.7rem;" data-icon="mi:notification"></span></a>
+            <a href="#"><span class="iconify" style="font-size: 1.4rem;" data-icon="bi:chat-left-text"></span></a>
+            <div class="profile overflow-hidden rounded-circle w-25">
+              <img src="/assets/images/faces/face1.jpg" alt="" class="w-100 ">
+            </div>
+            <div v-if="false" class="profile-details position-absolute ">
+              <div class="d-flex align-items-center justify-content-between border-bottom border-top border-secondary">
+                <div class="profile overflow-hidden rounded-circle w-25">
+                  <img src="/assets/images/faces/face1.jpg" alt="" class="w-100 ">
+                </div>
+                <!-- <h5>{{ getUser.username || customUsername }}</h5> -->
+                <h5>Asabeneh</h5>
+              </div>
+                <!-- Authentication -->
+              <div class="authentication p-4">
+                <ul>
+                  <li><a href="#">My profile</a></li>
+                  <li><a href="#">Edit profile</a></li>
+                  <li><a href="#">Notifications</a></li>
+                  <li><a href="#">Authentication</a></li>
+                </ul>
+              </div>
+                <!-- sign out -->
+              <div class="signout">
+                <p>Sign out</p>
+              </div>
+            </div>
           </div>
         </div>
        </header>
@@ -23,11 +48,15 @@
        <main class="p-4 grid">
           <!-- side menu -->
          <div class="side-menu g-col-3 g-col-md-3">
-           <button class="btn btn-primary w-100 text-left"><i class="fa-solid fa-house"></i>Home</button>
+           <button class="btn btn-primary w-100 text-left d-flex align-items-center"><span class="iconify me-2" style="color: #fff;" data-icon="bytesize:home"></span>Home</button>
            <div class="side-menu-list-parent">
 
              <div class="side-menu-list member">
-               <a href=""><span class="iconify text-secondary fw-bolder" data-icon="eva:arrow-right-fill" href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"></span>Members Central</a>
+               <p>
+                 <span class="iconify text-secondary fw-bolder" data-icon="eva:arrow-right-fill" href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"></span>
+                 <a href="#">Members Central</a>               
+               </p>
+               
                <div class="member_collapsed collapse" id="collapseExample">
                   <a href="" class="individual-member"><span >👋</span>Start here</a>
                   <a href="" class="individual-member"><span>😏</span>Introduce Yourself</a>
@@ -35,7 +64,13 @@
              </div>
 
              <div class="side-menu-list vip-group">
-               <a href=""><span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"></span>VIP GROUPS</a>
+               <p>
+                 <span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"></span>
+                 <a href="#">VIP GROUPS</a>
+                 <span type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Create a space">
+                  <span class="iconify" style="font-size: 1.2rem; color: blue;" data-icon="carbon:add-alt"></span>
+                </span>
+               </p>
                <div class="member_collapsed collapse" id="collapseExample2">
                   <a href="" class="individual-member"><span >🙋</span>Las Vegas Singles</a>
                   <a href="" class="individual-member"><span>💱</span>No mint Mark</a>
@@ -43,7 +78,10 @@
              </div>
 
              <div class="side-menu-list vip-group">
-               <a href=""><span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"></span>Admins</a>
+               <p>
+                 <span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"></span>
+                 <a href="">Admins</a>
+               </p>
                <div class="member_collapsed collapse" id="collapseExample3">
                   <a href="" class="individual-member"><span >😎</span>Zhivago Admins</a>
                </div>
@@ -56,7 +94,7 @@
          </div>
 
             <!-- main posts -->
-         <div class="main-posts g-col-6 g-col-md-6">
+         <div class="main-posts g-col-6 g-col-md-6 shadow-sm p-3 mb-5 bg-body rounded">
            <div class="w-100 d-flex justify-space-between">
              <h4>Home</h4>
             <!-- div to select type of post -->
@@ -83,22 +121,20 @@
             <div class="post-content pt-2 pb-4">
               <p>Is anyone here to like me?</p>
               <div class="main-post-img overflow-hidden rounded">
-                <img src="/assets/images/faces/face3.jpg" alt="" class="w-100">
+                <img src="/img/IMG-20220314-WA0028.jpg" alt="" class="w-100">
               </div>
             </div>
 
             <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
-              <a href="" class="likebtn"><span><i class="fa-regular fa-thumbs-up me-2"></i></span>Like</a>
-              <a class="flex-grow-1 ps-3 commentbtn" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4"><span><i class="fa-regular fa-message me-2"></i></span>Comment</a>
+              <a href="" class="likebtn d-flex align-items-center"><span class="iconify" data-icon="fa-regular:thumbs-up"></span>Like</a>
+              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
               <a href="" class="commentbtn">1 comment</a>
             </div>
 
            <div class="collapse comment-section" id="collapseExample4">
             <div class="text-center my-3">
-              <h3>Post a omment</h3>
-              <div class="login-signup comment-login justify-content-around m-auto">
-                <button type="button" class="btn btn-outline-primary">Log in</button>
-                <button type="button" class="btn btn-primary">Sign up</button>
+              <div class="comment-text justify-content-around m-auto">
+                <button type="button" class="btn btn-outline-dark">Show more comment</button>
               </div>
             </div>
           </div>
@@ -106,7 +142,7 @@
             <div class="ad-space pos_absolute text-black text-center">
               <em>-advertisement-</em>
               <div class="_ad_inner_space w-100">
-                  width x height
+                  700 x 100
               </div>
             </div>
           </div>
@@ -114,8 +150,9 @@
          </div>
 
           <!-- Trending posts -->
-         <div class="g-col-3 g-col-md-6">
-           <div class="trending-post bg-white shadow-sm rounded p-3">
+         <div class="g-col-3 g-col-md-6 ">
+           <button class="btn btn-primary w-100 text-center py-3 px-4">New Post</button>
+           <div class="trending-post bg-white shadow-sm rounded p-3 mt-4">
            <h5 class="text-black">Trending posts</h5>
               <!-- tp means trending posts -->
             <div class="individual_tp d-flex align-items-center py-2">
@@ -145,8 +182,8 @@
               <!-- space for advert -->
           <div class="ad-space text-black text-center mt-5">
             <em>-advertisement-</em>
-            <div class="_ad_inner_space w-100">
-                width x height
+            <div class="_ad_inner_space">
+                250 x 100
             </div>
           </div>
          </div>
@@ -158,6 +195,9 @@
 <script>
 import Loader from "./Loader.vue"
 export default {
+  data(){
+    customUsername: 'Dummy Username'
+  },
    computed:{
        getUser(){
          return  this.$store.getters.getUser
@@ -172,7 +212,10 @@ export default {
 
 
 <style scoped>
-
+*{
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: hsl(0, 0%, 23.1%);
+}
 
 header, main{
   max-width: 1440px;
@@ -181,17 +224,17 @@ header, main{
   width: 15% !important;
 }
 
-.login-signup{
+.user-profile{
   width: 16%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 main{
   display: grid;
   grid-template-columns: 300px 1fr 300px;
   gap: 3em;
-  background: #EFFFFD;
+  background: #fff;
   margin-inline: auto;
 }
 
@@ -224,11 +267,11 @@ main{
   color: #000;
 }
 
-.main-posts{
+/* .main-posts{
   height: 100vh;
   max-height: 100vh;
   position: relative;
-}
+} */
 
 .pos_absolute{
   position: fixed;
@@ -240,10 +283,22 @@ main{
 ._ad_inner_space{
   background: #eee;
   height: 100px;
+  width: 250px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .side-menu-list{
   margin: 2em 0.5em;
+}
+
+.side-menu-list p{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
 }
 .side-menu-list a{
   text-decoration: none;
@@ -251,7 +306,7 @@ main{
   font-weight: 500;
   font-size: 1.1rem;
   width: 100%;
-  margin: 1em 0;
+  margin: 0;
   display: flex;
   align-items: center;
 }
@@ -274,13 +329,23 @@ main{
 }
 
 .main-post-img{
-  height: 500px;
+  display: flex;
 }
 
-.comment-login{
-  width: 26%;
+.comment-text{
+  width: 50%;
 }
 
+.profile-details{
+
+ }
+
+.authentication ul li{
+  list-style-type: none;
+
+}
+
+ 
 @media screen and (max-width: 1200px){
   main{
   grid-template-columns: 250px 1fr 250px;
@@ -300,9 +365,9 @@ main{
     left: 28%;
   }
 
-  .comment-login{
-    width: 40%;
-  }
+
+
+
 
 }
 
