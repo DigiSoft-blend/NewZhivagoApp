@@ -180,7 +180,10 @@ export default{
 </script>
 
 <style scoped>
-
+*{
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: hsl(0, 0%, 23.1%);
+}
 
 header, main{
   max-width: 1440px;
@@ -299,6 +302,10 @@ main{
 
 .comment-login{
   width: 26%;
+}
+
+.nav-link{
+  padding: 0;
 }
 
 @media screen and (max-width: 1200px){
