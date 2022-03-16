@@ -1,47 +1,159 @@
+
 <template>
+<!-- row px-5 m-0 -->
+     <div class="px-0 bg-light text-black">
+       <Loader v-if="getLoader" class="text-center"></Loader> 
+       <header class="d-flex py-2 px-5 mx-auto align-items-center justify-content-between border-bottom bg-white">
+         <div class="logo w-25">
+          <router-link to="/"><img class="w-100" src="/assets/images/zhivago-logo.png" alt=""></router-link>
+         </div>
+        <div class="d-flex flex-grow-1 align-items-center justify-content-between pl-5">
+          <div class="search w-75 d-flex p-2 rounded">
+            <!-- <font-awesome-icon icon="fa-thin fa-magnifying-glass" /> -->
+            <i class="fa-solid fa-magnifying-glass text-black-50 d-flex align-items-center"></i>
+            <input type="text" placeholder="Search" class="w-100 p-2 flex-grow-1 outline-0 border-0 bg-transparent">
+          </div>
+          <div class="login-signup">
+            <button type="button" class="btn btn-outline-primary">Log in</button>
+            <button type="button" class="btn btn-primary">Sign up</button>
+          </div>
+        </div>
+       </header>
 
- <div class="row p-0 m-0">
-    
-   <Loader v-if="getLoader" class="text-center"></Loader>
+       <main class="p-4 grid">
+          <!-- side menu -->
+         <div class="side-menu g-col-3 g-col-md-3">
+           <button class="btn btn-primary w-100 text-left"><i class="fa-solid fa-house"></i>Home</button>
+           <div class="side-menu-list-parent">
 
-   <div class="col-md-12 bimg">
+             <div class="side-menu-list member">
+               <a href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"><span class="iconify text-secondary fw-bolder" data-icon="eva:arrow-right-fill"></span>Members Central</a>
+               <div class="member_collapsed collapse" id="collapseExample">
+                  <a href="" class="individual-member"><span >👋</span>Start here</a>
+                  <a href="" class="individual-member"><span>😏</span>Introduce Yourself</a>
+               </div>
+             </div>
 
- <div class="cover-container d-flex w-100 hight p-3 mx-auto flex-column animate__animated animate__fadeInRight">
-  <header class="mb-auto">
-    <div>
-     
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a href="" class="nav-link a1"><i class="fa fa-bag-shopping text-light"></i></a>
-        <router-link class="nav-link active a1" to="/login">Log out</router-link>
-        <!-- <router-link class="nav-link a1" to="/register"></router-link> -->
-      </nav>
-    </div>
+             <div class="side-menu-list vip-group">
+               <a href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"><span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill"></span>VIP GROUPS</a>
+               <div class="member_collapsed collapse" id="collapseExample2">
+                  <a href="" class="individual-member"><span >🙋</span>Las Vegas Singles</a>
+                  <a href="" class="individual-member"><span>💱</span>No mint Mark</a>
+               </div>
+             </div>
 
-  </header>
+             <div class="side-menu-list vip-group">
+               <a href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"><span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill"></span>Admins</a>
+               <div class="member_collapsed collapse" id="collapseExample3">
+                  <a href="" class="individual-member"><span >😎</span>Zhivago Admins</a>
+               </div>
+             </div>
+             
+             
+             
+           </div>
 
-  <div class="container m-0 p-5 mt-5 text-light">
-    <div class="col-md-8">
-      <p style="font-size:24px">______ &nbsp; Awsome! you just Joined the club</p>
-     <h1>Welcome {{ getUser.name }} </h1>
-    </div>
+         </div>
 
-       <li>{{ getUser.name }}</li>
-       <li>{{ getUser.username }}</li>
-       <li>{{ getUser.email }}</li> 
+            <!-- main posts -->
+         <div class="main-posts g-col-6 g-col-md-6">
+           <div class="w-100 d-flex justify-space-between">
+             <h4>Home</h4>
+            <!-- div to select type of post -->
+            <div></div>
+           </div>
 
-    <!-- <p class="mt-4" > At vero eos et accusamus et iusto cadreto margoposito ensextaro marcopolo abokina nigeria and rusia</p>
-     <p class="mt-4">
-      <router-link class="btn btn-secondary  border-white bg-transparent btnz2 text-light" to="/register">Register</router-link>
-    </p> -->
+          <div class="w-100 p-3 bg-white">
 
-    
-  </div>
-    
- 
-</div>
- </div>
- </div>
+            <div class="d-flex justify-content-between w-100">
+                  <!-- detail of poster -->
+                <div class="d-flex align-items-center py-2">
+                
+                <div class="tp_img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face3.jpg" alt="" class="w-100">
+                </div>
+                <div class="tp_details text-black px-2">
+                  <h5 class="">Black girl Wonder</h5>
+                  <small class="username_tp text-muted">Posted in Start here.</small>
+                </div>
+              </div>
+              <a href="" class="text-black sharebtn">Share</a>
+            </div>
+                  <!-- post conent i.e post image, likes and commenr -->
+            <div class="post-content pt-2 pb-4">
+              <p>Is anyone here to like me?</p>
+              <div class="main-post-img overflow-hidden rounded">
+                <img src="/assets/images/faces/face3.jpg" alt="" class="w-100">
+              </div>
+            </div>
+
+            <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
+              <a href="" class="likebtn"><span><i class="fa-regular fa-thumbs-up me-2"></i></span>Like</a>
+              <a class="flex-grow-1 ps-3 commentbtn" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4"><span><i class="fa-regular fa-message me-2"></i></span>Comment</a>
+              <a href="" class="commentbtn">1 comment</a>
+            </div>
+
+           <div class="collapse comment-section" id="collapseExample4">
+            <div class="text-center my-3">
+              <h3>Post a omment</h3>
+              <div class="login-signup w-25 justify-content-around m-auto">
+                <button type="button" class="btn btn-outline-primary">Log in</button>
+                <button type="button" class="btn btn-primary">Sign up</button>
+              </div>
+            </div>
+          </div>
+
+            <div class="ad-space pos_absolute text-black text-center">
+              <em>-advertisement-</em>
+              <div class="_ad_inner_space w-100">
+                  width x height
+              </div>
+            </div>
+          </div>
+
+         </div>
+
+          <!-- Trending posts -->
+         <div class="g-col-3 g-col-md-6">
+           <div class="trending-post bg-white shadow-sm rounded p-3">
+           <h5 class="text-black">Trending posts</h5>
+              <!-- tp means trending posts -->
+            <div class="individual_tp d-flex align-items-center py-2">
+              
+             <div class="tp_img rounded-circle overflow-hidden" >
+               <img src="/assets/images/faces/face3.jpg" alt="" class="w-100">
+             </div>
+             <div class="tp_details text-black px-2">
+               <h5 class="">What's up now???</h5>
+               <small class="username_tp text-muted">Black Girl Wonder</small>
+             </div>
+            </div>
+
+             <div class="individual_tp d-flex align-items-center py-2">
+              
+             <div class="tp_img rounded-circle overflow-hidden" >
+               <img src="/assets/images/faces/face5.jpg" alt="" class="w-100">
+             </div>
+             <div class="tp_details text-black px-2">
+               <h5 class="">Is anyone here to like me?</h5>
+               <small class="username_tp text-muted">Black Girl Wonder</small>
+             </div>
+            </div>
+
+          </div>
+
+              <!-- space for advert -->
+          <div class="ad-space text-black text-center mt-5">
+            <em>-advertisement-</em>
+            <div class="_ad_inner_space w-100">
+                width x height
+            </div>
+          </div>
+         </div>
+       </main>
+     </div>
 </template>
+
 
 <script>
 import Loader from "./Loader.vue"
@@ -59,209 +171,132 @@ export default {
 </script>
 
 <style scoped >
- 
+
+body{
+  height: 100vh;
+}
+
+header, main{
+  max-width: 1440px;
+}
+.logo{
+  width: 15% !important;
+}
+
+.login-signup{
+  width: 16%;
+  display: flex;
+  justify-content: space-between;
+}
+
 main{
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: 3em;
+  background: #EFFFFD;
+  margin-inline: auto;
+}
+
+.search{
+  background: #EFFFFD  !important;
+}
+
+.tp_img{
+  width: 18%
+
+}
+
+.tp_details h5{
+  font-size: 0.9rem;
+  margin-bottom: 0.3em;
+  margin-top: 0.5em;
+}
+
+.username_tp{
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.sharebtn, .likebtn, .commentbtn{
+  color: hsl(219, 14%, 50%);
+  text-decoration: none;
+}
+
+.sharebtn:hover, .likebtn:hover, .commentbtn{
+  color: #000;
+}
+
+.main-posts{
   height: 100vh;
+  max-height: 100vh;
+  position: relative;
 }
 
-.search {
-    position: relative;
-}
- .search input {
-    height: 45px;
-    text-indent: 40px;
-    border: 2px solid #d6d4d4
+.pos_absolute{
+  position: fixed;
+  width: 50%;
+  bottom: 5%;
+  left: 24%;
 }
 
-
-
-.search .icon {
-    position: absolute;
-    top: 1px;
-    left: 1px
+._ad_inner_space{
+  background: #eee;
+  height: 100px;
 }
 
-.circle{
-           width: 70px;
-            padding: 10px;
-            background-color: white;
-            border-radius: 100%;
-            max-width: 80px;
-            margin: 2px;
-            margin-right: 10px;
-            font-size: 13px;
-            box-shadow: 0px 1px 5px 1px rgb(217, 219, 219);
-            border: none;
-            font-weight: bolder !important;
-            
+.side-menu-list{
+  margin: 2em 0.5em;
+}
+.side-menu-list a{
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.1rem;
+  width: 100%;
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
 }
 
-.circle2{
-           width: 70px;
-            padding: 10px;
-            background-color: rgb(24, 23, 23);
-            border-radius: 100%;
-            max-width: 80px;
-            margin: 2px;
-            margin-right: 10px;
-            font-size: 13px;
-            /* box-shadow: 0px 1px 5px 1px rgb(217, 219, 219); */
-            border: none;
-            font-weight: bolder !important;
-            
-}
-.hight{
-  height: 400px !important;
+.member_collapsed{
+  margin: 0 1em;
+
 }
 
-
-a{
- text-decoration: none;
- color: blueviolet;
-}
-.zbtn{
-  border-radius: 50px;
-  background-color: blueviolet;
-   border: none !important;
+.member_collapsed a{
+  text-decoration: none;
+  color: hsl(219, 14%, 50%);
+  margin: 0.5em 0;
+  display: flex;
 }
 
-.btnz2{
-  border-radius: 50px;
-  width: 200px;
-}
-.bimg{
-  height: 100vh;
- background-image: url("/img/pexels-j.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.member_collapsed a span{
+  margin-right: 0.5em;
 }
 
-.inp{
-  border-radius: 50px;
-  outline: none !important;
-  border: none !important;
-  background-color: rgb(245, 245, 245) !important;
+.main-post-img{
+  height: 500px;
 }
 
-.form-signin {
-  width: 200%;
-  max-width: 330px;
-  padding: 20px;
-  margin: auto;
-}
+@media screen and (max-width: 1200px){
+  main{
+  grid-template-columns: 250px 1fr 250px;
+  gap: 1em;
+  }
 
-.form-signin .checkbox {
-  font-weight: 400;
-}
+  .main-post-img{
+  height: 100%;
+  }
 
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
+  .login-signup{
+  width: 21%;
+  }
 
+  .pos_absolute{
+    width: 45%;
+    left: 28%;
+  }
 
-  .input-icons i {
-            position: absolute;
-        }
-          
-        .input-icons {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-       
-          
-        .icon {
-          width: 40px;
-            padding: 10px;
-            background-color: white;
-            border-radius: 100%;
-            max-width: 50px;
-            margin: 2px;
-            text-align: center;
-            font-size: 13px;
-            box-shadow: 0px 1px 5px 1px rgb(217, 219, 219);
-        }
-
-        .icon2{
-          width: 100px !important;
-            padding: 10px;
-            background-color: rgb(155, 153, 153);
-            border-radius: 100%;
-            max-width: 40px;
-            margin: 10px;
-            text-align: center;
-            font-size: 13px;
-            color: white;
-        }
-          
-        .input-field {
-            width: 100%;
-            padding: 10px;
-            /* text-align: center; */
-            /* text-align: center; */
-        }
-
-        .a1{
-          padding: 15px !important;
-        }
-          
-        /* h2 {
-            color: green;
-        } */
-
-        /*
- * Globals
- */
-
-
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-}
-
-
-/*
- * Base structure
- */
-
-body {
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-}
-
-.cover-container {
-  max-width: 42em;
-}
-
-
-/*
- * Header
- */
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  color: rgba(255, 255, 255, .5);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
 }
 
 </style>
