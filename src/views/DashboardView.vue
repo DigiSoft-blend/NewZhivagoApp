@@ -94,7 +94,7 @@
          </div>
 
             <!-- main posts -->
-         <div class="main-posts g-col-6 g-col-md-6 shadow-sm p-3 mb-5 bg-body rounded">
+         <div class="main-posts g-col-6 g-col-md-6 shadow p-3 mb-5 bg-body rounded">
            <div class="w-100 d-flex justify-space-between">
              <h4>Home</h4>
             <!-- div to select type of post -->
@@ -127,14 +127,25 @@
 
             <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
               <a href="" class="likebtn d-flex align-items-center"><span class="iconify" data-icon="fa-regular:thumbs-up"></span>Like</a>
-              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
+              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#col1" role="button" aria-expanded="false" aria-controls="collapseExample4"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
               <a href="" class="commentbtn">1 comment</a>
             </div>
 
-           <div class="collapse comment-section" id="collapseExample4">
+           <div class="collapse comment-section" id="col1">
             <div class="comment-text text-center my-3">
-              <div class="showcomment justify-content-around m-auto">
-
+              <div class="individual-comment-parent">
+                <div class="individual-comment d-flex justify-content-between">
+                  <div class="profileImg overflow-hidden rounded-circle me-4">
+                    <img src="/assets/images/faces/face4.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="d-flex flex-grow-1 justify-content-between">
+                    <span class="fw-normal">Junior Sam</span>
+                    <span class="text-muted flex-grow-1 ms-3 fs-6">a month ago</span>
+                    <span class="iconify text-muted hover" data-icon="mi:options-horizontal"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="show-comment justify-content-around m-auto">
                 <button type="button" class="btn btn-outline-dark">Show more comment</button>
               </div>
             </div>
@@ -225,6 +236,10 @@ export default {
 *{
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: hsl(0, 0%, 23.1%);
+}
+
+.hover:hover{
+  color: #0d6efd;
 }
 
 header, main{
@@ -340,7 +355,7 @@ main{
 }
 
 .comment-text{
-  width: 50%;
+  width: 100%;
 }
 
 .profile-details{
@@ -350,6 +365,10 @@ main{
 .authentication ul li{
   list-style-type: none;
 
+}
+
+.profileImg{
+  width: 9%;
 }
 
  
