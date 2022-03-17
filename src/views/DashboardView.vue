@@ -24,8 +24,8 @@
                 <div class="profile overflow-hidden rounded-circle w-25">
                   <img src="/assets/images/faces/face1.jpg" alt="" class="w-100 ">
                 </div>
-                <!-- <h5>{{ getUser.username || customUsername }}</h5> -->
-                <h5>Asabeneh</h5>
+                <h5>{{ getUser.username || customUsername }}</h5>
+                <!-- <h5>Asabeneh</h5> -->
               </div>
                 <!-- Authentication -->
               <div class="authentication p-4">
@@ -48,13 +48,13 @@
        <main class="p-4 grid">
           <!-- side menu -->
          <div class="side-menu g-col-3 g-col-md-3">
-           <button class="btn btn-primary w-100 text-left d-flex align-items-center"><span class="iconify me-2" style="color: #fff;" data-icon="bytesize:home"></span>Home</button>
+           <button class="btn btn-primary w-100 text-left d-flex align-items-center py-2"><span class="iconify me-2" style="color: #fff;" data-icon="bytesize:home"></span>Home</button>
            <div class="side-menu-list-parent">
 
              <div class="side-menu-list member">
                <p>
-                 <span class="iconify text-secondary fw-bolder" data-icon="eva:arrow-right-fill" href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"></span>
-                 <a href="#">Members Central</a>               
+                 <span class="iconify text-dark-50 fw-bolder me-2" data-icon="eva:arrow-right-fill" href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"></span>
+                 <a href="" class="text-muted">Members Central</a>               
                </p>
                
                <div class="member_collapsed collapse" id="collapseExample">
@@ -65,10 +65,10 @@
 
              <div class="side-menu-list vip-group">
                <p>
-                 <span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"></span>
-                 <a href="#">VIP GROUPS</a>
+                 <span class="iconify text-dark-50 fw-bolder me-2" data-icon="eva:arrow-right-fill" href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"></span>
+                 <a href="" class="text-muted">VIP GROUPS</a>
                  <span type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Create a space">
-                  <span class="iconify" style="font-size: 1.2rem; color: blue;" data-icon="carbon:add-alt"></span>
+                  <span class="iconify text-dark-50" style="font-size: 1rem;" data-icon="carbon:add-alt"></span>
                 </span>
                </p>
                <div class="member_collapsed collapse" id="collapseExample2">
@@ -79,8 +79,8 @@
 
              <div class="side-menu-list vip-group">
                <p>
-                 <span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"></span>
-                 <a href="">Admins</a>
+                 <span class="iconify text-dark-50 fw-bolder me-2" data-icon="eva:arrow-right-fill" href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"></span>
+                 <a href="" class="text-muted">Admins</a>
                </p>
                <div class="member_collapsed collapse" id="collapseExample3">
                   <a href="" class="individual-member"><span >😎</span>Zhivago Admins</a>
@@ -132,16 +132,17 @@
             </div>
 
            <div class="collapse comment-section" id="collapseExample4">
-            <div class="text-center my-3">
-              <div class="comment-text justify-content-around m-auto">
+            <div class="comment-text text-center my-3">
+              <div class="showcomment justify-content-around m-auto">
+
                 <button type="button" class="btn btn-outline-dark">Show more comment</button>
               </div>
             </div>
           </div>
 
-            <div class="ad-space pos_absolute text-black text-center">
+            <div class="ad-space text-black text-center">
               <em>-advertisement-</em>
-              <div class="_ad_inner_space w-100">
+              <div class="_ad_inner_space post-ad-inner-space w-100">
                   700 x 100
               </div>
             </div>
@@ -151,7 +152,7 @@
 
           <!-- Trending posts -->
          <div class="g-col-3 g-col-md-6 ">
-           <button class="btn btn-primary w-100 text-center py-3 px-4">New Post</button>
+           <button class="btn btn-primary w-100 text-center py-3 px-4 fw-bold">New Post</button>
            <div class="trending-post bg-white shadow-sm rounded p-3 mt-4">
            <h5 class="text-black">Trending posts</h5>
               <!-- tp means trending posts -->
@@ -241,7 +242,7 @@ header, main{
 
 main{
   display: grid;
-  grid-template-columns: 300px 1fr 300px;
+  grid-template-columns: 270px 1fr 270px;
   gap: 3em;
   background: #fff;
   margin-inline: auto;
@@ -282,11 +283,8 @@ main{
   position: relative;
 } */
 
-.pos_absolute{
-  position: fixed;
-  width: 50%;
-  bottom: 5%;
-  left: 24%;
+.post-ad-inner-space{
+  height: 100px!important;
 }
 
 ._ad_inner_space{
