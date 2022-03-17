@@ -2,9 +2,9 @@
   
   <div class="row p-0 m-0">
    <Loader v-if="getLoader" class="text-center"></Loader> 
-  <div class="col-md-6 bg-light text-dark">
+  <div class="col-md-6  text-dark">
          
-  <main class="form-signin animate__animated animate__fadeInLeft">
+  <main class="form-signin">
     
   <form @submit="login">
     <div class="mt-5">
@@ -43,12 +43,6 @@
        <router-link to="/register">Create an account</router-link> 
     </div>
 
-     <!-- <div class="col-md-12 m-0 p-4 text-center  pb-3 animate__animated animate__bounce" style="font-size:20px">
-        <a href="https://web.facebook.com/silas.udofia.52/"><span class="mdi mdi-facebook text-primary p-2  circle"></span></a> 
-        <a href="https://api.whatsapp.com/send?phone=2348160595927"><span class="mdi mdi-twitter text-info ml-4 p-2   circle"></span></a>  
-        <a href="https://www.linkedin.com/in/silas-udofia-5244b8229/"><span class="mdi mdi-google text-danger ml-4  p-2   circle"></span></a>
-        <a href="https://github.com/DigiSoft-blend"><span class="mdi mdi-linkedin text-primary ml-4  p-2  circle"></span></a> 
-    </div> -->
   
   </form>
 </main>
@@ -57,7 +51,7 @@
   
 <div class="col-md-6 bimg d-none d-md-block">
 
- <div class="cover-container d-flex w-100 hight p-3 mx-auto flex-column animate__animated animate__fadeInRight">
+ <div class="cover-container d-flex w-100 hight p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
      
@@ -83,11 +77,6 @@
     
   </div>
    
-    <!-- <div class="mt-1 text-light" style="font-size:20px">
-        <i class="mdi mdi-arrow-left  p-2  circle2"></i>
-        <i class="mdi mdi-arrow-right  ml-4 p-2   circle2"></i> 
-    </div> -->
- 
 </div>
     </div>
   </div>
