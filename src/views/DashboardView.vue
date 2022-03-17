@@ -180,10 +180,17 @@
           </div>
 
               <!-- space for advert -->
-          <div class="ad-space text-black text-center mt-5">
+          <div class="ad-space text-black text-center mt-2">
             <em>-advertisement-</em>
             <div class="_ad_inner_space">
-                250 x 100
+                250 x 250
+            </div>
+          </div>
+
+          <div class="ad-space text-black text-center mt-2">
+            <em>-advertisement-</em>
+            <div class="_ad_inner_space">
+                250 x 250
             </div>
           </div>
          </div>
@@ -196,7 +203,9 @@
 import Loader from "./Loader.vue"
 export default {
   data(){
-    customUsername: 'Dummy Username'
+    return{
+      customUsername: 'Dummy Username'
+    }
   },
    computed:{
        getUser(){
@@ -282,7 +291,7 @@ main{
 
 ._ad_inner_space{
   background: #eee;
-  height: 100px;
+  height: 250px;
   width: 250px;
   margin-inline: auto;
   text-align: center;
