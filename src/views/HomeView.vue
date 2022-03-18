@@ -113,10 +113,10 @@
             </div>
           </div>
 
-            <div class="ad-space pos_absolute text-black text-center">
+            <div class="ad-space text-black text-center">
               <em>-advertisement-</em>
-              <div class="_ad_inner_space w-100">
-                  700 x 100
+              <div class="_ad_inner_space post-ad-inner-space">
+                  730 x 90
               </div>
             </div>
           </div>
@@ -200,8 +200,8 @@ header, main{
 
 main{
   display: grid;
-  grid-template-columns: 300px 1fr 300px;
-  gap: 3em;
+  grid-template-columns: 270px 1fr 270px;
+  gap: 2em;
   background: #fff;
   margin-inline: auto;
 }
@@ -241,16 +241,14 @@ main{
   position: relative;
 }
 
-.pos_absolute{
-  position: fixed;
-  width: 50%;
-  bottom: 5%;
-  left: 24%;
+.post-ad-inner-space{
+  height: 90px!important;
+  width: 730px!important;
 }
 
 ._ad_inner_space{
   background: #eee;
-  height: 100px;
+  height: 250px;
   width: 250px;
   margin-inline: auto;
   text-align: center;
@@ -258,7 +256,6 @@ main{
   align-items: center;
   justify-content: center;
 }
-
 .side-menu-list{
   margin: 2em 0.5em;
 }
