@@ -119,7 +119,7 @@
                 <span class="text-muted flex-grow-1 ms-3 text-left flex-grow-1" style="font-size: 0.8rem;">7 days ago</span>
                 <a href="" class="text-black sharebtn hover mx-3">Share</a>
                 <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
-                <div v-if="true" class="share-post d-flex justify-content-between position-absolute border border-secondary border-1 rounded-1 shadow-sm">
+                <div v-if="false" class="share-post d-flex justify-content-between position-absolute border border-secondary border-1 rounded-1 shadow-sm">
                   <div>
                     <p>Share to web</p>
                     <small class="text-muted">This post is Public.</small>
