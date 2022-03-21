@@ -4,29 +4,29 @@
 <!-- row px-5 m-0 -->
      <div class="px-0 bg-light text-black">
        <Loader v-if="getLoader" class="text-center"></Loader> 
-       <header class="d-flex py-2 px-5 mx-auto align-items-center justify-content-between border-bottom border-secondary bg-white">
+       <header class="d-flex py-2 px-lg-5 mx-auto align-items-center justify-content-between border-bottom border-secondary bg-white">
          <div class="logo w-25">
           <router-link to="/"><img class="w-100" src="/assets/images/zhivago-logo.png" alt=""></router-link>
          </div>
         <div class="d-flex flex-grow-1 align-items-center justify-content-between pl-5">
-          <div class="search w-75 d-flex p-2 rounded align-items-center shadow bg-body rounded">
+          <div class="search w-75 d-lg-flex d-md-none d-none d-sm-none p-2 rounded align-items-center shadow bg-body rounded">
             <!-- <font-awesome-icon icon="fa-thin fa-magnifying-glass" /> -->
             <span class="iconify" data-icon="charm:search"></span>
             <input type="text" placeholder="Search" class="w-100 p-2 flex-grow-1 outline-0 border-0 bg-transparent">
           </div>
           <div class="user-profile position-relative align-items-center">
-            <a href="#"><span class="iconify" style="font-size: 1.7rem;" data-icon="mi:notification"></span></a>
-            <a href="#"><span class="iconify" style="font-size: 1.4rem;" data-icon="bi:chat-left-text"></span></a>
-            <div class="profile overflow-hidden rounded-circle w-25">
+            <a href="#"><span class="iconify hover d-md-none d-none d-sm-none d-lg-block" style="font-size: 1.5rem;" data-icon="mi:notification"></span></a>
+            <a href="#"><span class="iconify hover d-md-none d-none d-sm-none d-lg-block" style="font-size: 1.2rem;" data-icon="bi:chat-left-text"></span></a>
+            <div class="profile overflow-hidden rounded-circle">
               <img src="/assets/images/faces/face1.jpg" alt="" class="w-100 ">
             </div>
             <div v-if="false" class="profile-details position-absolute ">
               <div class="d-flex align-items-center justify-content-between border-bottom border-top border-secondary">
-                <div class="profile overflow-hidden rounded-circle w-25">
+                <div class="profile overflow-hidden rounded-circle" style="width: 23%;">
                   <img src="/assets/images/faces/face1.jpg" alt="" class="w-100 ">
                 </div>
-                <!-- <h5>{{ getUser.username || customUsername }}</h5> -->
-                <h5>Asabeneh</h5>
+                <h5>{{ getUser.username || customUsername }}</h5>
+                <!-- <h5>Asabeneh</h5> -->
               </div>
                 <!-- Authentication -->
               <div class="authentication p-4">
@@ -46,16 +46,16 @@
         </div>
        </header>
 
-       <main class="p-4 grid">
+       <main class="py-4 px-2">
           <!-- side menu -->
-         <div class="side-menu g-col-3 g-col-md-3">
-           <button class="btn btn-primary w-100 text-left d-flex align-items-center"><span class="iconify me-2" style="color: #fff;" data-icon="bytesize:home"></span>Home</button>
+         <div class="side-menu g-col-3 g-col-md-3  d-sm-none d-none d-lg-block">
+           <button class="btn btn-primary w-100 text-left d-flex align-items-center py-2"><span class="iconify me-2" style="color: #fff;" data-icon="bytesize:home"></span>Home</button>
            <div class="side-menu-list-parent">
 
              <div class="side-menu-list member">
                <p>
-                 <span class="iconify text-secondary fw-bolder" data-icon="eva:arrow-right-fill" href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"></span>
-                 <a href="#">Members Central</a>               
+                 <span class="iconify text-black-50 fw-bolder me-2" data-icon="eva:arrow-right-fill" href="#collapseExample" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"></span>
+                 <a href="" class="text-muted">Members Central</a>               
                </p>
                
                <div class="member_collapsed collapse" id="collapseExample">
@@ -66,10 +66,10 @@
 
              <div class="side-menu-list vip-group">
                <p>
-                 <span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"></span>
-                 <a href="#">VIP GROUPS</a>
+                 <span class="iconify text-black-50 fw-bolder me-2" data-icon="eva:arrow-right-fill" href="#collapseExample2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample2"></span>
+                 <a href="" class="text-muted">VIP GROUPS</a>
                  <span type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Create a space">
-                  <span class="iconify" style="font-size: 1.2rem; color: blue;" data-icon="carbon:add-alt"></span>
+                  <span class="iconify text-dark-50" style="font-size: 1rem;" data-icon="carbon:add-alt"></span>
                 </span>
                </p>
                <div class="member_collapsed collapse" id="collapseExample2">
@@ -80,8 +80,8 @@
 
              <div class="side-menu-list vip-group">
                <p>
-                 <span class="iconify text-secondary fw-normal" data-icon="eva:arrow-right-fill" href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"></span>
-                 <a href="">Admins</a>
+                 <span class="iconify text-black-50 fw-bolder me-2" data-icon="eva:arrow-right-fill" href="#collapseExample3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample3"></span>
+                 <a href="" class="text-muted">Admins</a>
                </p>
                <div class="member_collapsed collapse" id="collapseExample3">
                   <a href="" class="individual-member"><span >😎</span>Zhivago Admins</a>
@@ -95,7 +95,7 @@
          </div>
 
             <!-- main posts -->
-         <div class="main-posts g-col-6 g-col-md-6 shadow-sm p-3 mb-5 bg-body rounded">
+         <div class="main-posts g-col-6 g-col-md-6 shadow p-3 bg-body rounded">
            <div class="w-100 d-flex justify-space-between">
              <h4>Home</h4>
             <!-- div to select type of post -->
@@ -116,34 +116,519 @@
                   <small class="username_tp text-muted">Posted in Start here.</small>
                 </div>
               </div>
-              <a href="" class="text-black sharebtn">Share</a>
+              <div class="d-flex flex-grow-1 py-2 position-relative">
+                <span class="text-muted flex-grow-1 ms-3 text-left flex-grow-1" style="font-size: 0.8rem;">7 days ago</span>
+                <a href="" class="text-black sharebtn hover mx-3">Share</a>
+                <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+                <div v-if="false" class="share-post d-flex justify-content-between position-absolute border border-secondary border-1 rounded-1 shadow-sm">
+                  <div>
+                    <a href=""><p>Share to web</p></a>
+                    <small class="text-muted">This post is Public.</small>
+                  </div>
+                  <button class="btn btn-outline-secondary ">Copy link</button>
+                </div>
+
+                <div v-if="false" class="post-option position-absolute border border-secondary border-1 rounded-1 shadow-sm">
+                  <a href=""><div>
+                    <p>Edit post</p>
+                    <small class="text-muted">Make changes to this post</small>
+                  </div></a>
+                   <a href=""><div>
+                    <p>Unfollow post</p>
+                    <small class="text-muted">Turn off notifications for this post</small>
+                  </div></a>
+                   <a href=""><div>
+                    <p>Delete post</p>
+                    <small class="text-muted">Permanently delete this post</small>
+                  </div></a>
+                </div>
+              </div>
             </div>
-                  <!-- post conent i.e post image, likes and commenr -->
+                  <!-- post content i.e post image, likes and commenr -->
             <div class="post-content pt-2 pb-4">
-              <p>Is anyone here to like me?</p>
+              <p class="fs-3">Is anyone here to like me?</p>
               <div class="main-post-img overflow-hidden rounded">
                 <img src="/img/IMG-20220314-WA0028.jpg" alt="" class="w-100">
               </div>
             </div>
 
-            <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
-              <a href="" class="likebtn d-flex align-items-center"><span class="iconify" data-icon="fa-regular:thumbs-up"></span>Like</a>
-              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
-              <a href="" class="commentbtn">1 comment</a>
+            <div class="post-likes d-flex my-2">
+              <div class="post-likes-img-parent">
+                <div class="post-likes-img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face3.jpg" alt="" class="w-100">
+                </div>
+              </div>
+              <p>LIked by Black, shadrach & others</p>
             </div>
 
-           <div class="collapse comment-section" id="collapseExample4">
-            <div class="text-center my-3">
-              <div class="comment-text justify-content-around m-auto">
+            <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
+              <a href="" class="likebtn d-flex align-items-center"><span class="iconify" data-icon="fa-regular:thumbs-up"></span>Like</a>
+              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#col1-input" role="button" aria-expanded="false" aria-controls="col1-input"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
+              <a class="commentbtn" data-bs-toggle="collapse" href="#col1" role="button" aria-expanded="false" aria-controls="collapseExample4">1 comment</a>
+            </div>
+
+           <div class="collapse comment-section" id="col1">
+            <div class="comment-text text-center py-3 border-bottom border-secondary">
+              <div class="individual-comment-parent">
+                <div class="individual-comment d-flex justify-content-between align-items-start">
+                  <div class="profileImg overflow-hidden rounded-circle me-4">
+                    <img src="/assets/images/faces/face4.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <span class="fw-normal">Junior Sam</span>
+                      <span class="text-muted flex-grow-1 ms-3 text-left" style="font-size: 0.8rem;">a month ago</span>
+                      <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+                    </div>
+                    <p class="my-2 text-start">Thanks alot, this was very helpful</p>
+                    <div class="my-1 text-start">
+                       <span class="commentbtn ms-2">Reply</span>
+                       <span class="commentbtn ms-2">Like</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="show-comment justify-content-around m-auto">
                 <button type="button" class="btn btn-outline-dark">Show more comment</button>
+              </div>
+            </div>
+            <div class="newcomment d-flex justify-content-between align-items-start py-3">
+               <div class="profileImg overflow-hidden rounded-circle me-4">
+                  <img src="/assets/images/faces/face4.jpg" alt="" class="w-100">
+                </div>
+                <div class="flex-grow-1 border-secondary border rounded p-3">
+                  <input type="text" id="#col1-input" placeholder="What are your thoughts?" class="new-comment-input text-break w-100 p-2">
+                  <div class="d-flex justify-content-between mt-2">
+                    <span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="akar-icons:video"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="bi:image"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:gif-20-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:emoji-28-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="teenyicons:attach-solid"></span>
+                    </span>
+                    <button class="btn btn-primary px-4 py-2 fw-normal">Post</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+
+            <div class="ad-space text-black text-center">
+              <em>-advertisement-</em>
+              <div class="_ad_inner_space post-ad-inner-space">
+                  730 x 90
               </div>
             </div>
           </div>
 
-            <div class="ad-space pos_absolute text-black text-center">
+          <div class="w-100 p-3 bg-white">
+
+            <div class="d-flex justify-content-between w-100">
+                  <!-- detail of poster -->
+                <div class="d-flex align-items-center py-2">
+                
+                <div class="tp_img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face1.jpg" alt="" class="w-100">
+                </div>
+                <div class="tp_details text-black px-2">
+                  <h5 class="">Black girl Wonder</h5>
+                  <small class="username_tp text-muted">Posted in Start here.</small>
+                </div>
+              </div>
+              <div class="d-flex flex-grow-1 py-2">
+                <span class="text-muted flex-grow-1 ms-3 text-left flex-grow-1" style="font-size: 0.8rem;">7 days ago</span>
+                <a href="" class="text-black sharebtn hover mx-3">Share</a>
+                <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+              </div>
+            </div>
+                  <!-- post content i.e post image, likes and commenr -->
+            <div class="post-content pt-2 pb-4">
+              <p class="fs-3">Is anyone here to like me?</p>
+              <div class="main-post-img overflow-hidden rounded">
+                <img src="/img/IMG-20220314-WA0027.jpg" alt="" class="">
+                <img src="/img/IMG-20220314-WA0026.jpg" alt="" class="">
+              </div>
+            </div>
+
+            <div class="post-likes d-flex my-2">
+              <div class="post-likes-img-parent">
+                <div class="post-likes-img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face6.jpg" alt="" class="w-100">
+                </div>
+              </div>
+              <p>LIked by Black</p>
+            </div>
+
+            <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
+              <a href="" class="likebtn d-flex align-items-center"><span class="iconify" data-icon="fa-regular:thumbs-up"></span>Like</a>
+              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#col1-input" role="button" aria-expanded="false" aria-controls="col1-input"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
+              <a class="commentbtn" data-bs-toggle="collapse" href="#col2" role="button" aria-expanded="false" aria-controls="collapseExample4">1 comment</a>
+            </div>
+
+           <div class="collapse comment-section" id="col2">
+            <div class="comment-text text-center py-3 border-bottom border-secondary">
+              <div class="individual-comment-parent">
+                <div class="individual-comment d-flex justify-content-between align-items-start">
+                  <div class="profileImg overflow-hidden rounded-circle me-4">
+                    <img src="/assets/images/faces/face5.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <span class="fw-normal">Junior Sam</span>
+                      <span class="text-muted flex-grow-1 ms-3 text-left" style="font-size: 0.8rem;">a month ago</span>
+                      <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+                    </div>
+                    <p class="my-2 text-start">Thanks alot, this was very helpful</p>
+                    <div class="my-1 text-start">
+                       <span class="commentbtn ms-2">Reply</span>
+                       <span class="commentbtn ms-2">Like</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="show-comment justify-content-around m-auto">
+                <button type="button" class="btn btn-outline-dark">Show more comment</button>
+              </div>
+            </div>
+            <div class="newcomment d-flex justify-content-between align-items-start py-3">
+               <div class="profileImg overflow-hidden rounded-circle me-4">
+                  <img src="/assets/images/faces/face5.jpg" alt="" class="w-100">
+                </div>
+                <div class="flex-grow-1 border-secondary border rounded p-3">
+                  <input type="text" id="#col1-input" placeholder="What are your thoughts?" class="new-comment-input text-break w-100 p-2">
+                  <div class="d-flex justify-content-between mt-2">
+                    <span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="akar-icons:video"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="bi:image"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:gif-20-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:emoji-28-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="teenyicons:attach-solid"></span>
+                    </span>
+                    <button class="btn btn-primary px-4 py-2 fw-normal">Post</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+
+            <div class="ad-space text-black text-center">
               <em>-advertisement-</em>
-              <div class="_ad_inner_space w-100">
-                  700 x 100
+              <div class="_ad_inner_space post-ad-inner-space">
+                  730 x 90
+              </div>
+            </div>
+          </div>
+
+          <div class="w-100 p-3 bg-white">
+
+            <div class="d-flex justify-content-between w-100">
+                  <!-- detail of poster -->
+                <div class="d-flex align-items-center py-2">
+                
+                <div class="tp_img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face3.jpg" alt="" class="w-100">
+                </div>
+                <div class="tp_details text-black px-2">
+                  <h5 class="">Black girl Wonder</h5>
+                  <small class="username_tp text-muted">Posted in Start here.</small>
+                </div>
+              </div>
+              <div class="d-flex flex-grow-1 py-2">
+                <span class="text-muted flex-grow-1 ms-3 text-left flex-grow-1" style="font-size: 0.8rem;">7 days ago</span>
+                <a href="" class="text-black sharebtn hover mx-3">Share</a>
+                <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+              </div>
+            </div>
+                  <!-- post content i.e post image, likes and commenr -->
+            <div class="post-content pt-2 pb-4">
+              <p class="fs-3">Is anyone here to like me?</p>
+              <div class="main-post-img overflow-hidden rounded">
+                <img src="/img/IMG-20220314-WA0019.jpg" alt="" class="w-100">
+              </div>
+            </div>
+
+            <div class="post-likes d-flex my-2">
+              <div class="post-likes-img-parent">
+                <div class="post-likes-img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face6.jpg" alt="" class="w-100">
+                </div>
+              </div>
+              <p>LIked by Black, shadrach & others</p>
+            </div>
+
+            <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
+              <a href="" class="likebtn d-flex align-items-center"><span class="iconify" data-icon="fa-regular:thumbs-up"></span>Like</a>
+              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#col1-input" role="button" aria-expanded="false" aria-controls="col1-input"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
+              <a class="commentbtn" data-bs-toggle="collapse" href="#col3" role="button" aria-expanded="false" aria-controls="collapseExample4">3 comment</a>
+            </div>
+
+           <div class="collapse comment-section" id="col3">
+            <div class="comment-text text-center py-3 border-bottom border-secondary">
+              <div class="individual-comment-parent">
+                <div class="individual-comment d-flex justify-content-between align-items-start">
+                  <div class="profileImg overflow-hidden rounded-circle me-4">
+                    <img src="/assets/images/faces/face4.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <span class="fw-normal">Junior Sam</span>
+                      <span class="text-muted flex-grow-1 ms-3 text-left" style="font-size: 0.8rem;">3 days ago</span>
+                      <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+                    </div>
+                    <p class="my-2 text-start">Yes I am!!!</p>
+                    <div class="my-1 text-start">
+                       <span class="commentbtn ms-2">Reply</span>
+                       <span class="commentbtn ms-2">Like</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="individual-comment d-flex justify-content-between align-items-start">
+                  <div class="profileImg overflow-hidden rounded-circle me-4">
+                    <img src="/assets/images/faces/face6.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <span class="fw-normal">Black Jr</span>
+                      <span class="text-muted flex-grow-1 ms-3 text-left" style="font-size: 0.8rem;">3 days ago</span>
+                      <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+                    </div>
+                    <p class="my-2 text-start">You look so beautiful</p>
+                    <div class="my-1 text-start">
+                       <span class="commentbtn ms-2">Reply</span>
+                       <span class="commentbtn ms-2">Like</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="show-comment justify-content-around m-auto">
+                <button type="button" class="btn btn-outline-dark">Show more comment</button>
+              </div>
+            </div>
+            <div class="newcomment d-flex justify-content-between align-items-start py-3">
+               <div class="profileImg overflow-hidden rounded-circle me-4">
+                  <img src="/assets/images/faces/face4.jpg" alt="" class="w-100">
+                </div>
+                <div class="flex-grow-1 border-secondary border rounded p-3">
+                  <input type="text" id="#col1-input" placeholder="What are your thoughts?" class="new-comment-input text-break w-100 p-2">
+                  <div class="d-flex justify-content-between mt-2">
+                    <span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="akar-icons:video"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="bi:image"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:gif-20-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:emoji-28-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="teenyicons:attach-solid"></span>
+                    </span>
+                    <button class="btn btn-primary px-4 py-2 fw-normal">Post</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+
+            <div class="ad-space text-black text-center">
+              <em>-advertisement-</em>
+              <div class="_ad_inner_space post-ad-inner-space">
+                  730 x 90
+              </div>
+            </div>
+          </div>
+
+           <div class="w-100 p-3 bg-white">
+
+            <div class="d-flex justify-content-between w-100">
+                  <!-- detail of poster -->
+                <div class="d-flex align-items-center py-2">
+                
+                <div class="tp_img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face3.jpg" alt="" class="w-100">
+                </div>
+                <div class="tp_details text-black px-2">
+                  <h5 class="">Black girl Wonder</h5>
+                  <small class="username_tp text-muted">Posted in Start here.</small>
+                </div>
+              </div>
+              <div class="d-flex flex-grow-1 py-2">
+                <span class="text-muted flex-grow-1 ms-3 text-left flex-grow-1" style="font-size: 0.8rem;">7 days ago</span>
+                <a href="" class="text-black sharebtn hover mx-3">Share</a>
+                <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+              </div>
+            </div>
+                  <!-- post content i.e post image, likes and commenr -->
+            <div class="post-content pt-2 pb-4">
+              <p class="fs-3">Is anyone here to like me?</p>
+              <div class="main-post-img overflow-hidden rounded">
+                <img src="/img/IMG-20220314-WA0022.jpg" alt="" class="w-100">
+              </div>
+            </div>
+
+            <div class="post-likes d-flex my-2">
+              <div class="post-likes-img-parent">
+                <div class="post-likes-img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face3.jpg" alt="" class="w-100">
+                </div>
+              </div>
+              <p>LIked by Black, shadrach</p>
+            </div>
+
+            <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
+              <a href="" class="likebtn d-flex align-items-center"><span class="iconify" data-icon="fa-regular:thumbs-up"></span>Like</a>
+              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#col1-input" role="button" aria-expanded="false" aria-controls="col1-input"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
+              <a class="commentbtn" data-bs-toggle="collapse" href="#col4" role="button" aria-expanded="false" aria-controls="collapseExample4">1 comment</a>
+            </div>
+
+           <div class="collapse comment-section" id="col4">
+            <div class="comment-text text-center py-3 border-bottom border-secondary">
+              <div class="individual-comment-parent">
+                <div class="individual-comment d-flex justify-content-between align-items-start">
+                  <div class="profileImg overflow-hidden rounded-circle me-4">
+                    <img src="/assets/images/faces/face5.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <span class="fw-normal">Junior Sam</span>
+                      <span class="text-muted flex-grow-1 ms-3 text-left" style="font-size: 0.8rem;">a month ago</span>
+                      <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+                    </div>
+                    <p class="my-2 text-start">Thanks alot, this was very helpful</p>
+                    <div class="my-1 text-start">
+                       <span class="commentbtn ms-2">Reply</span>
+                       <span class="commentbtn ms-2">Like</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="show-comment justify-content-around m-auto">
+                <button type="button" class="btn btn-outline-dark">Show more comment</button>
+              </div>
+            </div>
+            <div class="newcomment d-flex justify-content-between align-items-start py-3">
+               <div class="profileImg overflow-hidden rounded-circle me-4">
+                  <img src="/assets/images/faces/face4.jpg" alt="" class="w-100">
+                </div>
+                <div class="flex-grow-1 border-secondary border rounded p-3">
+                  <input type="text" id="#col1-input" placeholder="What are your thoughts?" class="new-comment-input text-break w-100 p-2">
+                  <div class="d-flex justify-content-between mt-2">
+                    <span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="akar-icons:video"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="bi:image"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:gif-20-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:emoji-28-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="teenyicons:attach-solid"></span>
+                    </span>
+                    <button class="btn btn-primary px-4 py-2 fw-normal">Post</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+
+            <div class="ad-space text-black text-center">
+              <em>-advertisement-</em>
+              <div class="_ad_inner_space post-ad-inner-space">
+                  730 x 90
+              </div>
+            </div>
+          </div>
+
+          <div class="w-100 p-3 bg-white">
+
+            <div class="d-flex justify-content-between w-100">
+                  <!-- detail of poster -->
+                <div class="d-flex align-items-center py-2">
+                
+                <div class="tp_img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face1.jpg" alt="" class="w-100">
+                </div>
+                <div class="tp_details text-black px-2">
+                  <h5 class="">Black girl Wonder</h5>
+                  <small class="username_tp text-muted">Posted in Start here.</small>
+                </div>
+              </div>
+              <div class="d-flex flex-grow-1 py-2">
+                <span class="text-muted flex-grow-1 ms-3 text-left flex-grow-1" style="font-size: 0.8rem;">7 days ago</span>
+                <a href="" class="text-black sharebtn hover mx-3">Share</a>
+                <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+              </div>
+            </div>
+                  <!-- post content i.e post image, likes and commenr -->
+            <div class="post-content pt-2 pb-4">
+              <p class="fs-3">Is anyone here to like me?</p>
+              <div class="main-post-img overflow-hidden rounded">
+                <img src="/img/IMG-20220314-WA0029.jpg" alt="" class="">
+                <img src="/img/IMG-20220314-WA0023.jpg" alt="" class="">
+              </div>
+            </div>
+
+            <div class="post-likes d-flex my-2">
+              <div class="post-likes-img-parent">
+                <div class="post-likes-img rounded-circle overflow-hidden" >
+                  <img src="/assets/images/faces/face6.jpg" alt="" class="w-100">
+                </div>
+              </div>
+              <p>LIked by Black</p>
+            </div>
+
+            <div class="likes_comments d-flex justify-content-between border-top border-bottom border-secondary py-2">
+              <a href="" class="likebtn d-flex align-items-center"><span class="iconify" data-icon="fa-regular:thumbs-up"></span>Like</a>
+              <a class="flex-grow-1 ps-3 commentbtn d-flex align-items-center" data-bs-toggle="collapse" href="#col1-input" role="button" aria-expanded="false" aria-controls="col1-input"><span class="iconify me-2" data-icon="bx:message"></span>Comment</a>
+              <a class="commentbtn" data-bs-toggle="collapse" href="#col5" role="button" aria-expanded="false" aria-controls="collapseExample4">1 comment</a>
+            </div>
+
+           <div class="collapse comment-section" id="col5">
+            <div class="comment-text text-center py-3 border-bottom border-secondary">
+              <div class="individual-comment-parent">
+                <div class="individual-comment d-flex justify-content-between align-items-start">
+                  <div class="profileImg overflow-hidden rounded-circle me-4">
+                    <img src="/assets/images/faces/face5.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between">
+                      <span class="fw-normal">Junior Sam</span>
+                      <span class="text-muted flex-grow-1 ms-3 text-left" style="font-size: 0.8rem;">a month ago</span>
+                      <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
+                    </div>
+                    <p class="my-2 text-start">Thanks alot, this was very helpful</p>
+                    <div class="my-1 text-start">
+                       <span class="commentbtn ms-2">Reply</span>
+                       <span class="commentbtn ms-2">Like</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="show-comment justify-content-around m-auto">
+                <button type="button" class="btn btn-outline-dark">Show more comment</button>
+              </div>
+            </div>
+            <div class="newcomment d-flex justify-content-between align-items-start py-3">
+               <div class="profileImg overflow-hidden rounded-circle me-4">
+                  <img src="/assets/images/faces/face5.jpg" alt="" class="w-100">
+                </div>
+                <div class="flex-grow-1 border-secondary border rounded p-3">
+                  <input type="text" id="#col1-input" placeholder="What are your thoughts?" class="new-comment-input text-break w-100 p-2">
+                  <div class="d-flex justify-content-between mt-2">
+                    <span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="akar-icons:video"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="bi:image"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:gif-20-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="fluent:emoji-28-regular"></span>
+                      <span class="iconify me-2 text-muted" style="font-size: 1.3rem;" data-icon="teenyicons:attach-solid"></span>
+                    </span>
+                    <button class="btn btn-primary px-4 py-2 fw-normal">Post</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+
+            <div class="ad-space text-black text-center">
+              <em>-advertisement-</em>
+              <div class="_ad_inner_space post-ad-inner-space">
+                  730 x 90
               </div>
             </div>
           </div>
@@ -151,8 +636,8 @@
          </div>
 
           <!-- Trending posts -->
-         <div class="g-col-3 g-col-md-6 ">
-           <button class="btn btn-primary w-100 text-center py-3 px-4">New Post</button>
+         <div class="g-col-3 g-col-md-6 d-md-none d-sm-none d-none d-lg-block">
+           <button class="btn btn-primary w-100 text-center py-3 px-4 fw-bold">New Post</button>
            <div class="trending-post bg-white shadow-sm rounded p-3 mt-4">
            <h5 class="text-black">Trending posts</h5>
               <!-- tp means trending posts -->
@@ -188,12 +673,12 @@
             </div>
           </div>
 
-          <div class="ad-space text-black text-center mt-2">
+          <!-- <div class="ad-space text-black text-center mt-2">
             <em>-advertisement-</em>
             <div class="_ad_inner_space">
                 250 x 250
             </div>
-          </div>
+          </div> -->
          </div>
        </main>
      </div>
@@ -227,6 +712,14 @@ export default {
   color: hsl(0, 0%, 23.1%);
 }
 
+.hover{
+  color: hsl(0, 0%, 23.1%);
+  cursor: pointer;
+}
+.hover:hover{
+  color: #0d6efd;
+}
+
 header, main{
   max-width: 1440px;
 }
@@ -234,6 +727,9 @@ header, main{
   width: 15% !important;
 }
 
+.profile{
+  width: 23%;
+}
 .user-profile{
   width: 16%;
   display: flex;
@@ -242,8 +738,8 @@ header, main{
 
 main{
   display: grid;
-  grid-template-columns: 300px 1fr 300px;
-  gap: 3em;
+  grid-template-columns: 20% 1fr 20%;
+  gap: 1em;
   background: #fff;
   margin-inline: auto;
 }
@@ -271,6 +767,7 @@ main{
 .sharebtn, .likebtn, .commentbtn{
   color: hsl(219, 14%, 50%);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .sharebtn:hover, .likebtn:hover, .commentbtn{
@@ -283,11 +780,9 @@ main{
   position: relative;
 } */
 
-.pos_absolute{
-  position: fixed;
-  width: 50%;
-  bottom: 5%;
-  left: 24%;
+.post-ad-inner-space{
+  height: 90px!important;
+  width: 730px!important;
 }
 
 ._ad_inner_space{
@@ -340,26 +835,65 @@ main{
 
 .main-post-img{
   display: flex;
+  justify-content: space-between;
+}
+
+.main-post-img img{
+  width: 48%;
 }
 
 .comment-text{
-  width: 50%;
+  width: 100%;
 }
 
-.profile-details{
+/* .profile-details{
 
- }
+ } */
 
 .authentication ul li{
   list-style-type: none;
 
 }
 
+.profileImg{
+  width: 8%;
+}
+
+.new-comment-input{
+  border: none;
+  outline: none;
+}
+
+.post-likes-img{
+  width: 35%;
+}
+
+.share-post{
+  width: 100%;
+  top: 60%;
+  background: #fff;
+  padding: 1em;
+}
+
+.share-post p, .post-option a p{
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.post-option{
+  background: #fff;
+  top: 80%;
+  right: 0;
+  width: 55%;
+  padding: 1em;
+}
+
+
  
 @media screen and (max-width: 1200px){
   main{
-  grid-template-columns: 250px 1fr 250px;
-  gap: 1em;
+    grid-template-columns: 24% 50% 23%;
   }
 
   .main-post-img{
@@ -375,8 +909,20 @@ main{
     left: 28%;
   }
 
+  .post-ad-inner-space{
+  width: 100%!important;
+}
 
+}
 
+@media screen and (max-width: 800px){
+  main{
+    display: block;
+  }
+
+  .profile{
+    width: 35%;
+  }
 
 
 }
