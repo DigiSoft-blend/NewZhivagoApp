@@ -121,10 +121,25 @@
                 <span class="iconify text-muted hover" style="font-size: 1.7rem;" data-icon="mi:options-horizontal"></span>
                 <div v-if="false" class="share-post d-flex justify-content-between position-absolute border border-secondary border-1 rounded-1 shadow-sm">
                   <div>
-                    <p>Share to web</p>
+                    <a href=""><p>Share to web</p></a>
                     <small class="text-muted">This post is Public.</small>
                   </div>
-                  <button class="btn btn-outine-secondary">Copy link</button>
+                  <button class="btn btn-outline-secondary ">Copy link</button>
+                </div>
+
+                <div v-if="false" class="post-option position-absolute border border-secondary border-1 rounded-1 shadow-sm">
+                  <a href=""><div>
+                    <p>Edit post</p>
+                    <small class="text-muted">Make changes to this post</small>
+                  </div></a>
+                   <a href=""><div>
+                    <p>Unfollow post</p>
+                    <small class="text-muted">Turn off notifications for this post</small>
+                  </div></a>
+                   <a href=""><div>
+                    <p>Delete post</p>
+                    <small class="text-muted">Permanently delete this post</small>
+                  </div></a>
                 </div>
               </div>
             </div>
@@ -851,6 +866,28 @@ main{
 .post-likes-img{
   width: 35%;
 }
+
+.share-post{
+  width: 100%;
+  top: 60%;
+  background: #fff;
+  padding: 1em;
+}
+
+.share-post p, .post-option a p{
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.post-option{
+  background: #fff;
+  top: 80%;
+  right: 0;
+  width: 55%;
+  padding: 1em;
+}
+
 
  
 @media screen and (max-width: 1200px){
