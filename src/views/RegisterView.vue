@@ -38,7 +38,7 @@
 
        <div class="search">
          <i class="mdi mdi-key text-warning icon"></i>
-          <input v-model="password_confirmation" type="password" class="inp bg-light input-field" placeholder="Confirme Password" required> 
+          <input v-model="password_confirmation" type="password" class="inp bg-light input-field" placeholder="Confirm Password" required> 
          <p class="mt-2 text-danger" style="font-size:12px">{{ getRegistrationError.password }}</p>
        </div>
 
